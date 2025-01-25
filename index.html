@@ -3,144 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkatesh S - Portfolio</title>
+    <title>Venkatesh S - Machine Learning Engineer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
         }
-        header {
-            background-color: #f4f4f4;
+        .header {
+            background-color: #4CAF50;
+            color: white;
             padding: 20px;
             text-align: center;
         }
-        h1, h2 {
-            color: #2c3e50;
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 1em;
+        }
+        .contact-info a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
         .section {
-            margin-bottom: 30px;
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .experience, .education {
-            margin-bottom: 20px;
+        .section h2 {
+            font-size: 1.8em;
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
         }
-        .skills, .languages, .certifications {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        .section ul {
+            list-style-type: none;
+            padding: 0;
         }
-        .skill, .language, .certification {
-            background-color: #e0e0e0;
-            padding: 5px 10px;
-            border-radius: 5px;
+        .section ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Venkatesh S</h1>
-        <p>Machine Learning Engineer specializing in AI solutions</p>
-    </header>
 
-    <main>
-        <section class="section">
-            <h2>Contact</h2>
-            <p>Email: svenkatesh.js@gmail.com</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/svenkatesh-js">www.linkedin.com/in/svenkatesh-js</a></p>
-            <p>Location: Arlington, Virginia, United States</p>
-        </section>
+    <div class="header">
+        <h1>Venkatesh S (He/Him)</h1>
+        <p>Machine Learning Engineer specializing in AI solutions at ScriptChain Health</p>
+        <div class="contact-info">
+            <a href="mailto:Venkatesh.shanmugam@gwu.edu">Venkatesh.shanmugam@gwu.edu</a> |
+            <a href="tel:+17032162540">703-216-2540</a> |
+            <a href="https://github.com/Venkat-Git98" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/svenkatesh-js" target="_blank">LinkedIn</a>
+        </div>
+    </div>
 
-        <section class="section">
-            <h2>Summary</h2>
-            <p>At ScriptChain Health, our team is pioneering AI in healthcare, where my role as a Machine Learning Engineer involves developing models to predict patient readmissions. With a Master's in Computer Science underway at The George Washington University, I apply the latest in AI and ML research, integrating large language models for data analysis that is both accurate and timely.</p>
-            <p>In parallel, as a Data Consultant at GW, I empower the academic community with advanced statistical analysis skills. My expertise in R, Python, and AWS technologies, combined with my educational pursuits, underpin my commitment to advancing AI's role in improving patient outcomes and transforming healthcare analytics.</p>
-        </section>
-
-        <section class="section">
-            <h2>Experience</h2>
-            <div class="experience">
-                <h3>Machine Learning Engineer - ScriptChain Health</h3>
-                <p>May 2024 - Present (9 months)</p>
+    <div class="section">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>The George Washington University, School of Engineering & Applied Science</strong><br>
+                <em>Master of Science in Computer Science</em> (May 2025)<br>
+                GPA: 3.67
+            </li>
+            <li>
+                <strong>Loyola Institute of Business Administration</strong><br>
+                <em>Executive Diploma in Artificial Intelligence, ML, DL</em> (Nov 2020 - Jan 2022)<br>
+                Grade: 7.75
+            </li>
+            <li>
+                <strong>SRM Institute of Science and Technology</strong><br>
+                <em>Bachelor of Technology in Computer Science</em> (2016 - 2020)<br>
+                Grade: 75%
+            </li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Work Experience</h2>
+        <ul>
+            <li>
+                <strong>ScriptChain Health</strong> - AI Engineer Intern (May 2024 - Present)<br>
                 <ul>
-                    <li>Lead development of AI models for patient readmission prediction</li>
-                    <li>Apply cutting-edge research to enhance predictive capabilities</li>
-                    <li>Utilize AWS technologies for scalable training and data management</li>
-                    <li>Implement federated learning for decentralized model training</li>
+                    <li>Achieved over 75% accuracy in heart disease readmission forecasts using advanced neural networks and LLMs.</li>
+                    <li>Developed a Graph RAG system for personalized health recommendations leveraging Gemini from Vertex AI.</li>
+                    <li>Built high-integrity data pipelines with Federated Learning, ensuring 95% processing accuracy while maintaining privacy compliance.</li>
                 </ul>
-            </div>
-            <div class="experience">
-                <h3>Data Consultant - The George Washington University</h3>
-                <p>August 2024 - Present (6 months)</p>
+            </li>
+            <li>
+                <strong>The George Washington University</strong> - Data Consultant IV (Sep 2024 - Present)<br>
                 <ul>
-                    <li>Provide advanced statistical analysis support</li>
-                    <li>Lead workshops on data handling and analysis</li>
-                    <li>Offer expertise in R, Python, STATA, SAS, and SPSS</li>
+                    <li>Provided expert statistical support using tools like R and Python, improving research outcomes across the university.</li>
+                    <li>Designed and led data literacy workshops, enhancing decision-making skills for students and staff.</li>
                 </ul>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Education</h2>
-            <div class="education">
-                <h3>The George Washington University</h3>
-                <p>Master of Science - MS, Computer Science (September 2023 - 2025)</p>
-            </div>
-            <div class="education">
-                <h3>Loyola Institute Of Business Administration</h3>
-                <p>Executive Diploma in Artificial Intelligence, AI, ML, DL (November 2020 - January 2022)</p>
-            </div>
-            <div class="education">
-                <h3>SRM University</h3>
-                <p>Bachelor of Technology - BTech, Computer Science (2016 - 2020)</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Skills</h2>
-            <div class="skills">
-                <span class="skill">Retrieval-Augmented Generation (RAG)</span>
-                <span class="skill">GPT-4</span>
-                <span class="skill">AI Engineer</span>
-                <span class="skill">Machine Learning</span>
-                <span class="skill">AWS</span>
-                <span class="skill">Python</span>
-                <span class="skill">R</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Languages</h2>
-            <div class="languages">
-                <span class="language">Tamil (Professional Working)</span>
-                <span class="language">English (Professional Working)</span>
-                <span class="language">Hindi (Professional Working)</span>
-                <span class="language">German (Elementary)</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Certifications</h2>
-            <div class="certifications">
-                <span class="certification">C Programming Expert Level</span>
-                <span class="certification">Java Programming Expert Level</span>
-                <span class="certification">Python Programming</span>
-                <span class="certification">C++ Programming Expert Level</span>
-                <span class="certification">Tableau Desktop Certified Professional</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Publications</h2>
-            <ul>
-                <li>Route Planning for Ships During Emergency Using Genetic Algorithm</li>
-                <li>An end-to-end unified framework for assessing Turning Movements based Deep Neural Network</li>
-                <li>Heart Beat Monitoring System and Alerting Indicator for Driver's Safety</li>
-                <li>Enhanced Learning with Augmented Reality and Virtual Reality</li>
-            </ul>
-        </section>
-    </main>
-</body>
-</html>
+            </li>
+            <li>
+                <strong>Tata Consultancy Services (TCS)</strong> - Digital Transformation Developer (Apr 2021 - Aug 2023)<br>
+                <ul>
+                    <li>Reduced infrastructure requirements by 40% by developing RPA solutions that optimized operations.</li>
+                    <li>Integrated AI-driven RPA technologies to automate repetitive tasks and improve workflow efficiency.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Technical Projects</h2>
+        <ul>
+            <li>
+                <strong>Building Code Compliance: Navigating Complexity with AI</strong><br>
+                Developed a dynamic Streamlit application leveraging GPT-4o and Pinecone for building code compliance queries. Integrated a robust RAG framework to enhance accessibility and usability of regulatory information.
+            </li>
+            <li>
+                <strong>AI-Text Discriminator</strong><br>
+                Achieved 97% accuracy in distinguishing AI-generated from human-written text using an ensemble approach combining GPT-2, RoBERTa, and CNN models.
+            </li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Tableau Certified Professional</li>
+            <li>AWS Academy Cloud Architecting</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Volunteering</h2>
+        <ul>
+            <li>
+                <strong>Core Team Member - TEXUS</strong> (Jan 2020 - Mar 2020)<br>
+                Organized a national-level tech fest with 50+ events, engaging over 7,000 participants. Coordinated team efforts and resolved event-related challenges.
+            </li>
+            <li>
+                <strong>Event Coordinator - TEXUS</strong> (Mar 2018)<br>
+                Organized an event titled "Running Machine," encouraging students to develop RC vehicles and showcase engineering skills. Designed tracks and collaborated with the Cyborg club.
+            </li>
+            <li>
+                <strong>Organizing Lead - Cyborg Workshop</strong> (Mar 2018)<br>
+                Led a workshop titled "How Robotics is the Future," featuring Mr. Tony Maciejewski, inspiring students to explore multidisciplinary approaches in robotics.
+            </li>
+        </ul>
+    </div>
