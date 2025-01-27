@@ -58,176 +58,254 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
 /* Experience section styling */
     /* Experience section styling */
     #experience {
-      text-align: center;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 0 20px;
   }
-
+  
   #experience h1 {
+      text-align: center; /* Center the main heading */
       margin-bottom: 30px;
   }
-
+  
   #experience .experience-entry {
       display: flex;
       align-items: flex-start;
-      justify-content: center;
       margin-bottom: 30px;
       padding-bottom: 20px;
       border-bottom: 1px solid #eee;
   }
-
+  
   #experience .company-logo {
-      width: 100px; /* Adjust size as needed */
-      height: 50px; /* Adjust size as needed */
-      margin-right: 20px; /* Space between the logo and details */
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+      margin-right: 20px;
   }
-
+  
   #experience .details {
-       flex: 1;
-       text-align: left;
+      flex: 1; /* Let details take up remaining space */
   }
-
+  
   #experience .job-title {
       font-weight: bold;
-       margin-bottom: 5px;
+      margin-bottom: 5px;
   }
-
-   #experience .info {
+  
+  #experience .info {
       font-size: 0.9em;
       color: #888;
       margin-bottom: 10px;
   }
-
-
+  
   #experience ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
   }
+  
   #experience li {
       margin-bottom: 8px;
+      padding-left: 20px;
       position: relative;
-      padding-left: 25px;
   }
+  
   #experience li::before {
       content: "\2022";
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 0.2em;  /* Adjust vertical alignment if needed */
       font-size: 1.2em;
       color: #444;
   }
+  
+  
+  /* Media Query for smaller screens (optional, for a different layout on mobile) */
+  @media (max-width: 600px) { /* Adjust breakpoint as needed */
+      #experience .experience-entry {
+          flex-direction: column; /* Stack logo and details vertically */
+          align-items: center; /* Center the content horizontally */
+      }
+      #experience .company-logo {
+          margin-right: 0;
+          margin-bottom: 15px; /* Add space below the logo */
+      }
+  }
 
 /* Projects Section Styling */
+/* Projects Section Styling */
 #projects {
-    text-align: center; /* Center the "Projects" heading */
+  text-align: left;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
 }
+
 #projects h1 {
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
+
 #projects .project-entry {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center; /* Center horizontally */
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column; /* Mobile-first: Stack vertically */
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
 }
+
 #projects .project-image {
-    width: 200px; /* Adjust image size as needed */
-    height: auto;
-    margin-right: 20px;  /* Add space between image and details */
+  width: 100%;       /* Make image responsive */
+  max-width: 200px;  /* Limit max width */
+  height: auto;
+  margin-right: 20px; /* Spacing for larger screens */
+  margin-bottom: 10px; /* Spacing for smaller screens */
 }
+
+@media (min-width: 769px) { /* Larger screens: Side-by-side */
+  #projects .project-entry {
+      flex-direction: row;
+  }
+  #projects .project-image {
+      margin-bottom: 0;  /* Remove bottom margin on larger screens */
+  }
+}
+
 #projects .project-details {
-    flex: 1;           /* Let details take up available space */
-    text-align: left;
+  flex: 1; /* Allow details to take up remaining space */
 }
+
 #projects .project-title {
-    font-weight: bold;
-    margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
+
 #projects .project-dates {
-    font-size: 0.9em;
-    color: #888;
-    margin-bottom: 10px;
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 10px;
 }
+
 #projects .project-description ul {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0;
-    margin: 0;
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
 }
-#projects .project-description li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 25px;   /* Add space for the custom bullet point */
+
+#projects .project-description > ul > li { /* Direct child list items */
+  margin-bottom: 8px;
+  position: relative; /* For positioning bullet points */
+  padding-left: 20px;
 }
-#projects .project-description li::before {
-    content: "\2022";      /* Unicode character for a disc */
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.2em;
-    color: #444;         /* Adjust bullet point color as needed */
+
+#projects .project-description > ul > li::before { /* Bullet points for main list items */
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0.2em; /* Adjust vertical alignment if needed */
+  font-size: 1.2em;
+  color: #444;
 }
+
+/* Nested lists (for subtitles) */
+#projects .project-description ul ul {
+  list-style-type: disc;
+  margin-left: 20px; 
+  margin-top: 5px; 
+}
+
 #projects .project-link {
-    display: inline-block;  /* Make it behave like a link */
-    margin-top: 10px;
-    padding: 8px 15px;
-    background-color: #007bff; /* Example color - customize */
-    color: white;
-    border-radius: 5px;
-    text-decoration: none; /* Remove underline */
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
+
+#projects .project-link::before {
+  content: "Link: ";
+}
+
 #projects .project-link:hover {
-    background-color: #0056b3; /* Darker color on hover */
+  background-color: #0056b3;
 }
 
-/* Make the project image responsive */
-@media (max-width: 768px) {
-    #projects .project-entry {
-        flex-direction: column;  /* Stack image and details vertically */
-        text-align: center; 
-      }
-      #projects h1 {
-          margin-bottom: 30px;
-      }
-      #projects .project-entry {
-          margin-bottom: 30px;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #eee;
-          text-align: left;  /* Align project details to the left */
-      }
+/* Publications Section Styling */
+#publications {
+  text-align: center;
 }
 
-  /* Publications Section Styling */
- #publications {
-     text-align: center;
- }
- #publications h1 {
-     margin-bottom: 30px;
- }
- #publications .publication-entry {
-     margin-bottom: 20px;
-     padding-bottom: 15px;
-     border-bottom: 1px solid #eee; /* Optional separator */
-     text-align: left; /* Align publication details left */
- }
- #publications .publication-title {
-     font-style: italic; /* Italicize title */
-     margin-bottom: 5px;
- }
- #publications .publication-details {
-     font-size: 0.9em;
-     color: #888;
-     margin-bottom: 10px;
- }
- #publications .publication-link {  /* Style for publication links */
-     color: #007bff; /* Example - Customize */
-     text-decoration: none;
- }
- #publications .publication-link:hover {
-     text-decoration: underline;
- }
+#publications h1 {
+  margin-bottom: 30px;
+}
+
+#publications .publication-entry {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  display: flex;          /* Use flexbox for alignment */
+  flex-direction: column;  /* Stack elements vertically */
+}
+
+
+#publications .publication-content { /* New container for text content */
+  order: 1;                /* Place content before the link */
+}
+
+#publications .publication-title {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+#publications .publication-details {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+
+/* Style the publication link as a button */
+#publications .publication-link {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  order: 2;              /* Place the link after the content */
+  align-self: flex-start; /* Align link to the left */ 
+  margin-top: 10px;      /* Add some spacing above the link */
+}
+
+#publications .publication-link::before {
+  content: "Link";     /* Add "Link: " before the URL */
+}
+
+#publications .publication-link:hover {
+  background-color: #0056b3;
+}
+
+
+/* Consistent sub-bullet styles */
+#publications ul ul {
+list-style-type: disc;
+margin-left: 20px;
+}
+
+
+/* To keep consistent spacing, you may want to add margin to list items that DON'T have sub-lists*/
+#publications ul > li:not(:has(ul)) {
+  margin-bottom: 8px;
+}
          /* Certifications & Licenses Section Styling */
          #certifications-licenses {
           text-align: center;
@@ -352,17 +430,20 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
         <img src="./assets/img/jpg/your-professional-photo.jpg" alt="Venkatesh S" width="20%" style="border-radius: 50%">
       </picture>
       <p>
-        I am Venkatesh S, a Machine Learning Engineer specializing in AI solutions for healthcare at ScriptChain Health.  I am currently pursuing a Master's in Computer Science at The George Washington University, focusing on applying the latest advancements in AI and ML research, including the integration of large language models for accurate and timely data analysis.
-      </p>
-      <p>
-        At ScriptChain Health, I lead the development of AI models to predict patient readmissions.  This involves researching and implementing cutting-edge techniques, handling temporal data, and leveraging AWS cloud technologies such as Bedrock and Athena for scalable model training and data management. I am passionate about using my skills to improve patient outcomes and drive innovation in healthcare analytics.
-      </p>
-      <p>
-        In addition to my work at ScriptChain Health, I contribute to the academic community as a Data Consultant at GW. I provide support to students, faculty, and staff on advanced statistical analysis using various software and programming languages like R, Python, and Tableau. I enjoy empowering others with data-driven insights and fostering a collaborative learning environment.
-      </p>
-      <p>
-          Prior to my current roles, I gained valuable experience as an RPA Developer at Tata Consultancy Services and further honed my skills during my internship at TCS iON. My diverse background has equipped me with a strong foundation in software development, data analysis, and cloud technologies.  I am eager to continue contributing to the impactful intersection of AI and healthcare.
-      </p>
+        Hi, I’m <b>Venkatesh S</b>, a driven professional with a strong academic background and hands-on experience in artificial intelligence, machine learning, and data-driven solutions. Currently pursuing my <b>Master of Science in Computer Science</b> at <b>The George Washington University</b> (2023-2025), I am specializing in areas like deep learning, machine learning, and data analysis, where I am honing my skills to tackle complex, real-world challenges.
+    </p>
+    <p>
+        I am currently working as a <b>Machine Learning Engineer Intern</b> at <b>ScriptChain Health</b>, where I design and deploy predictive AI models to enhance patient care outcomes. My work focuses on building advanced models for patient readmission prediction, leveraging temporal data and large language models, implementing privacy-centric federated learning pipelines, and utilizing AWS cloud technologies for scalable AI solutions. This role allows me to directly contribute to transformative advancements in healthcare technology.
+    </p>
+    <p>
+        Previously, I served as a <b>Data Consultant</b> at <b>GW’s Academic Commons</b>, where I supported students and faculty with advanced statistical and data analysis projects, utilizing tools like Python, R, and MySQL. I also conducted workshops to empower the academic community with technical skills and foster interdisciplinary collaboration.
+    </p>
+    <p>
+        My academic journey began with a <b>Bachelor of Technology in Computer Science</b> from <b>SRM Institute of Science and Technology, Chennai</b> (2016-2020), where I built a strong foundation in computer science and machine learning. I further enhanced my expertise with an <b>Executive Diploma in Artificial Intelligence</b> from <b>Loyola Institute of Business Administration</b> (2020-2022), focusing on practical applications of AI, machine learning, and deep learning.
+    </p>
+    <p>
+        I am passionate about leveraging AI and data science to create intelligent, scalable systems that address real-world problems. Combining academic rigor with industry experience, I aim to contribute to innovative projects that drive meaningful impact across industries.
+    </p>
     </div>
 
     <!-- Skills Section (You can customize this further) -->
@@ -428,12 +509,12 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
                 <div class="location">United States</div>
             </div>
             <ul>
-                <li></b>Achieved impactful results:</b> Developed and deployed AI models to predict heart disease readmissions, achieving over 75% accuracy through cutting-edge neural networks and temporal dependency analysis.</li>
-                <li>Personalized healthcare solutions: Designed a Graph RAG system using Vertex AI’s Gemini to generate personalized diet and exercise recommendations, enhancing patient engagement and outcomes.</li>
-                <li>Privacy-first AI development: Engineered federated learning pipelines to securely process sensitive health data, ensuring privacy compliance while achieving 95% data processing accuracy.</li>
-                <li>End-to-end AI implementation: Spearheaded all phases of machine learning workflows, including data preprocessing, model training, and scalable deployment using AWS Bedrock and Athena.</li>
-                <li>Collaborative innovation: Partnered with cross-functional teams to integrate AI solutions into healthcare systems, driving real-world impact by reducing patient readmissions and improving care delivery.</li>
-                <li>Research-driven innovation: Applied methodologies from leading-edge research to enhance model performance, specifically in handling temporal data and advancing predictive analytics.</li>
+                <li><b>Achieved impactful results:</b> Developed and deployed AI models to predict heart disease readmissions, achieving over 78% accuracy through cutting-edge neural networks and temporal dependency analysis.</li>
+                <li><b>Personalized healthcare solutions:</b> Designed a Graph RAG system using Vertex AI’s Gemini to generate personalized diet and exercise recommendations, enhancing patient engagement and outcomes.</li>
+                <li><b>Privacy-first AI development:</b> Engineered federated learning pipelines to securely process sensitive health data, ensuring privacy compliance while achieving 95% data processing accuracy.</li>
+                <li><b>End-to-end AI implementation:</b> Spearheaded all phases of machine learning workflows, including data preprocessing, model training, and scalable deployment using AWS Bedrock and Athena.</li>
+                <li><b>Collaborative innovation:</b> Partnered with cross-functional teams to integrate AI solutions into healthcare systems, driving real-world impact by reducing patient readmissions and improving care delivery.</li>
+                <li><b>Research-driven innovation:</b> Applied methodologies from leading-edge research to enhance model performance, specifically in handling temporal data and advancing predictive analytics.</li>
             </ul>
         </div>
     </div>
@@ -447,13 +528,14 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
                 <div class="dates">Aug 2024 - Present</div>
                 <div class="location">United States (On-site)</div>
             </div>
-             <ul>
-                <li>Providing advanced statistical analysis and data consultation to students, faculty, and staff.</li>
-                <li>Supporting research and academic projects using R, Python, and other statistical software.</li>
-                <li>Assisting and leading workshops to enhance data handling and analysis capabilities.</li>
-                <li>Continuously expanding expertise in data analysis platforms like GIS software, MATLAB, and Tableau.</li>
-                <li>Fostering critical thinking and technical skills in learners.</li>
-            </ul>
+            <ul>
+              <li><b>Advanced statistical support:</b> Provide one-on-one consultation to students, faculty, and staff, leveraging tools such as R, Python, STATA, SAS, and SPSS to enhance research quality and technical proficiency.</li>
+              <li><b>Skill-building workshops:</b> Lead and assist in workshops focused on statistical analysis and data handling, delivering clear and actionable examples to demystify complex concepts for diverse academic audiences.</li>
+              <!-- <li><b>Comprehensive software expertise:</b> Stay updated on GIS software, MATLAB, Tableau, and other platforms to provide well-rounded support across various academic and research needs.</li> -->
+              <li><b>Fostering critical thinking:</b> Mentor learners in developing technical and analytical skills, enabling them to apply statistical methods effectively to real-world problems and academic projects.</li>
+              <li><b>Team collaboration for success:</b> Collaborate with a team of skilled data consultants to ensure high-quality support services, promoting academic success within the GW community.</li>
+              <li><b>Impact in education:</b> Contribute to the growth of the academic community by bridging technical knowledge with practical application, empowering users to achieve their research and academic goals.</li>
+          </ul>
         </div>
     </div>
 
@@ -467,14 +549,12 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
                  <div class="location">Chennai, Tamil Nadu, India (On-site)</div>
              </div>
              <ul>
-                 <li>Analyzed existing telecom processes and identified areas for automation.</li>
-                <li>Designed and developed RPA solutions using industry-standard tools and frameworks.</li>
-                 <li>Automated repetitive tasks such as data entry, invoice processing, and customer onboarding.</li>
-                 <li>Integrated RPA solutions with various telecom systems and applications.</li>
-                 <li>Conducted thorough testing and debugging of RPA solutions.</li>
-                <li>Provided ongoing maintenance and support for deployed RPA solutions.</li>
-                 <li>Continuously sought opportunities to optimize and improve existing automation solutions.</li>
-             </ul>
+              <li><b>Optimized operations with RPA:</b> Reduced infrastructure requirements by 40% by engineering and deploying innovative Robotic Process Automation (RPA) solutions that streamlined business processes across multiple projects.</li>
+              <li><b>Enhanced efficiency with AI integration:</b> Integrated RPA with AI-driven technologies to automate repetitive tasks, significantly improving productivity and reducing manual intervention in workflows.</li>
+              <li><b>Cross-functional collaboration:</b> Partnered with diverse teams to design and launch scalable automation solutions, driving operational efficiency and delivering measurable results in business applications.</li>
+              <li><b>Strategic problem-solving:</b> Leveraged expertise in process automation and digital transformation to identify bottlenecks and implement solutions that improved efficiency across enterprise systems.</li>
+              <li><b>Impactful innovation:</b> Spearheaded digital transformation initiatives, applying cutting-edge technologies to modernize workflows and deliver value to business stakeholders.</li>
+          </ul>
         </div>
     </div>
 
@@ -487,10 +567,13 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
                 <div class="dates">May 2018 - Jun 2018</div>
                 <div class="location">Chennai, Tamil Nadu, India</div>
            </div>
-            <ul>
-               <li>Completed training under 'Infogro Technology' supported by Skill Development Centre, TCS iON.</li>
-                <li>Successfully completed assigned project and gained knowledge in Python.</li>
-           </ul>
+           <ul>
+            <li><b>Data-driven learning insights:</b> Designed and implemented a digital analytics platform to monitor and analyze student performance, enhancing learning outcomes across institutions.</li>
+            <li><b>Advanced analytics integration:</b> Leveraged Python, Tableau, and SQL to build robust dashboards that provided actionable insights into student engagement and academic performance.</li>
+            <!-- <li><b>Scalable solution delivery:</b> Engineered scalable data pipelines using AWS services, ensuring real-time processing of large datasets from multiple educational institutions.</li> -->
+            <li><b>Impactful results:</b> Improved institutional decision-making by delivering a 30% increase in engagement tracking efficiency and enabling proactive academic interventions.</li>
+            <li><b>Collaboration for innovation:</b> Worked with cross-functional teams to integrate the analytics platform with existing learning management systems, ensuring seamless user experience and adoption.</li>
+        </ul>
         </div>
    </div>
 
@@ -498,20 +581,45 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
 <section id="projects">
   <h1>Projects</h1>
 
-  <div class="project-entry">  <!-- No image container anymore -->
+  <div class="project-entry">   <!-- No image container anymore -->
       <div class="project-details">
           <div class="project-title">Building Code Compliance: Navigating Complexity with AI</div>
           <div class="project-dates">Nov 2024 - Present</div>
           <div class="project-description">
-              <ul>
-                  <li>Developed a Retrieval-Augmented Generation (RAG) system for technical queries.</li>
-                  <li>Utilized Pinecone, Google BigBird/OpenAI embeddings, and custom prompts for efficient data management.</li>
-                  <li>Engineered GPT-4o for query augmentation and robust reference handling.</li>
-                  <li>Automated data scraping and applied hybrid chunking techniques for optimized processing.</li>
-                  <li>Deployed an interactive Streamlit application with GPT-4o for precise answer generation.</li>
-              </ul>
+            <ul>
+              <li><b>Objective:</b> Developed a sophisticated Retrieval-Augmented Generation (RAG) system to efficiently handle technical queries, focusing on the relationship between intricate technical details.</li>
+              <li><b>Data Management:</b>
+                  <ul>
+                      <li>Utilized Pinecone as the vector database for efficient embedding storage and retrieval.</li>
+                      <li>Experimented with Google BigBird for embeddings and adopted OpenAI Text Embedding Large through a data-driven selection approach.</li>
+                      <li>Emphasized text relationships using custom prompts to enhance embedding relevance.</li>
+                  </ul>
+              </li>
+              <li><b>Query Optimization:</b>
+                  <ul>
+                      <li>Engineered GPT-4o to augment user queries, focusing on technical terms, and utilized augmented queries to fetch the most relevant chunk IDs.</li>
+                      <li>Implemented robust reference handling for technical document chunks.</li>
+                  </ul>
+              </li>
+              <li><b>Data Processing:</b>
+                  <ul>
+                      <li>Performed advanced text cleaning using specialized libraries for high-quality input data.</li>
+                      <li>Automated data scraping from the ICC Council website using Selenium.</li>
+                      <li>Applied a hybrid approach for document chunking, combining hierarchy-based semantic chunking and rolling window techniques to generate efficient chunks with associated metadata.</li>
+                  </ul>
+              </li>
+              <li><b>Application:</b>
+                  <ul>
+                      <li>Deployed the RAG system as an interactive Streamlit application for user-friendly access.</li>
+                      <li>Used GPT-4o for generating precise answers to user queries based on the most relevant document chunks.</li>
+                      <li>Applied prompt engineering to optimize LLM outputs, ensuring focus on critical technical details.</li>
+                  </ul>
+              </li>
+              <li><b>Achievements:</b> Delivered a highly efficient and accurate technical query answering system by integrating cutting-edge AI technologies and data handling techniques.</li>
+          </ul>
+          
           </div>
-          <a class="project-link" href="#" target="_blank">Project Link (Replace with actual link)</a> </div>
+          <a class="project-link" href="https://github.com/Venkat-Git98/RAG_Building_Codes_Virginia" target="_blank"></a> </div>
   </div>
 
 
@@ -521,43 +629,183 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
         <div class="project-title">AI Text Discriminator</div>
         <div class="project-dates">Mar 2024 - Apr 2024</div>
         <div class="project-description">
-            <ul>
-                  <li>Designed and implemented an AI-based text classification system.</li>
-                  <li>Fine-tuned RoBERTa and GPT-2 models on a custom dataset.</li>
-                  <li>Created an ensemble model for enhanced accuracy (97%).</li>
-              </ul>
-          </div>
-           <a class="project-link" href="#" target="_blank">Project Link (Replace with actual link)</a> </div>
+          <ul>
+            <li><b>Objective:</b> Designed and implemented a robust AI-based text classification system to differentiate between AI-generated and human-written text.</li>
+            <li><b>Approach:</b> Fine-tuned RoBERTa and GPT-2 models on a custom dataset of 50,000 text samples generated using GPT-3.</li>
+            <li><b>Modeling Technique:</b> Created an ensemble model combining RoBERTa and GPT-2 to enhance classification accuracy.</li>
+            <li><b>Achievements:</b>
+                <ul>
+                    <li>Achieved an impressive <b>97% classification accuracy</b>.</li>
+                    <li>Leveraged advanced NLP techniques and a massive training corpus to improve predictive analytics.</li>
+                </ul>
+            </li>
+        </ul>
+        
+          <!-- </div>
+           <a class="project-link" href="#" target="_blank">Project Link (Replace with actual link)</a> </div> -->
   </div>
   <section id="publications">
     <h1>Publications</h1>
 
     <div class="publication-entry">
+      <div class="publication-content"> 
         <div class="publication-title">An end-to-end unified framework for assessing Turning Movements based Deep Neural Network</div>
         <div class="publication-details">International Journal of Advanced Science and Technology, March 30, 2020</div>
-        <p>Road traffic is a major issue in cities with increasing population... (Shortened description - Add more if needed)</p>
-        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+        <!-- <p>Road traffic is a major issue in cities with increasing population... (Shortened description - Add more if needed)</p> -->
+        <li><b>Methodology:</b>
+        <ul>
+          <li>Leveraged <b>Artificial Neural Networks (ANNs)</b> combined with <b>Kalman Filters</b> to dynamically predict TM counts while accounting for external factors such as climate, road conditions, and natural events.</li>
+          <li>Utilized <b>Convolutional Neural Networks (CNNs)</b> for vehicle type classification and traffic count estimation, addressing challenges like dense traffic and occlusions.</li>
+          <li>Integrated modular datasets, including traffic patterns, climate variance, and geospatial information, for accurate and holistic analysis.</li>
+      </ul>
+  </li>
+  <li><b>Innovations:</b>
+      <ul>
+          <li>Proposed a hybrid approach combining trajectory reconstruction and hierarchical path labeling to handle data ambiguities and improve prediction accuracy.</li>
+          <li>Incorporated advanced algorithms to optimize traffic signal timing and road designs based on TM counts.</li>
+      </ul>
+  </li>
+  <li><b>Achievements:</b>
+      <ul>
+          <li>Enhanced accuracy of TM count estimation, providing valuable insights for traffic forecasting, congestion analysis, and intersection improvement.</li>
+          <li>Presented a scalable, cost-effective solution that integrates sensor data and deep learning models for real-time traffic management.</li>
+      </ul>
+  </li>
+  <li><b>Future Scope:</b> Suggested further enhancements, including integrating real-time sensors and extending the model to autonomous traffic management systems.</li>
+</ul> </div>
+        <a class="publication-link" href="http://sersc.org/journals/index.php/IJAST/article/view/9778" target="_blank"></a>
+        
     </div>
 
-    <div class="publication-entry">
+    <div class="publication-entry"><div class="publication-content"> 
         <div class="publication-title">Enhanced Learning with Augmented Reality and Virtual Reality</div>
         <div class="publication-details">International Journal of Engineering and Advanced Technology (IJEAT), April 1, 2019</div>
-        <p>AR can play a crucial role... (Shortened description)</p>
-        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+        <ul>
+        <li><b>Objective:</b> Developed an innovative system integrating Augmented Reality (AR) and Virtual Reality (VR) to enhance learning experiences and make education more interactive and engaging for students.</li>
+          <li><b>Key Contributions:</b>
+              <ul>
+                  <li>Designed an AR-based application allowing students to visualize and interact with 3D models of human anatomy, such as the heart and skull, for a better understanding of abstract concepts.</li>
+                  <li>Incorporated VR technology to provide a 360-degree immersive experience, enabling detailed exploration of human organs with sound support for enhanced realism.</li>
+                  <li>Created an architecture leveraging AR cameras, trained image datasets, and 3D model databases for real-time visualization and learning.</li>
+              </ul>
+          </li>
+          <li><b>Innovations:</b>
+              <ul>
+                  <li>Interactive 3D models improved students' comprehension and interest in learning compared to traditional methods like textbooks and 2D diagrams.</li>
+                  <!-- <li>Integrated sound effects, such as heartbeats, to create a multisensory learning environment.</li> -->
+                  <li>Addressed challenges in visualizing complex concepts through innovative AR and VR solutions.</li>
+              </ul>
+          </li>
+          <li><b>Applications:</b> 
+              <ul>
+                  <li>Revolutionized education in fields like medicine, biology, and anatomy by providing hands-on virtual experiences.</li>
+                  <li>Enabled students and educators to explore intricate details of organs, enhancing both teaching and learning processes.</li>
+              </ul>
+          </li>
+          <li><b>Limitations:</b>
+              <ul>
+                  <li>AR camera requires pre-trained image datasets; untrained images cannot be scanned or processed.</li>
+                  <li>Textual information accompanying 3D models is limited, requiring supplementary resources for in-depth learning.</li>
+                  <li>High device performance requirements may limit usage on low-end devices.</li>
+              </ul>
+          </li>
+          <li><b>Conclusion:</b> While the app has certain limitations, it significantly enhances the learning experience by making education more interactive, immersive, and effective through the integration of AR and VR technologies.</li>
+      </ul>
+    </div>
+    <a class="publication-link" href="https://www.ijeat.org/wp-content/uploads/papers/v8i4/D6347048419.pdf" target="_blank"></a>
+       
     </div>
 
-    <div class="publication-entry">
+    <div class="publication-entry"><div class="publication-content"> 
         <div class="publication-title">HEART BEAT MONITORING SYSTEM AND ALERTING INDICATOR FOR DRIVER’S SAFETY</div>
         <div class="publication-details">International Journal for Science and Advance Research in Technology (IJSART), October 26, 2018</div>
-        <p>Now a days we have... (Shortened description)</p>
-        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+        <ul>
+          <li><b>Objective:</b> Proposed a heart rate monitoring system for drivers to predict and prevent accidents caused by heart conditions such as arrhythmia, ensuring enhanced safety during driving.</li>
+          <li><b>Key Contributions:</b>
+              <ul>
+                  <li>Designed a system utilizing an IR pulse sensor and Arduino Uno to continuously monitor the driver’s heart rate during trips.</li>
+                  <li>Integrated a buzzer and LED alert system to notify drivers when their pulse rate exceeds or falls below a predefined threshold.</li>
+                  <li>Added a GSM module to send emergency alerts to pre-registered contacts, including family members and doctors, during critical situations.</li>
+                  <li>Developed an automatic braking system to slow down or halt the vehicle in emergencies, reducing potential risks.</li>
+              </ul>
+          </li>
+          <li><b>Methodology:</b>
+              <ul>
+                  <li>Implemented Photoplethysmography (PPG) to measure heartbeats by detecting changes in blood density using an IR sensor.</li>
+                  <li>Calculated Beats Per Minute (BPM) using Arduino, displaying results on an LCD and initiating alerts when thresholds are breached.</li>
+                  <li>Configured the Arduino IDE to monitor heart rate data in real-time and display outputs through the Serial Monitor.</li>
+              </ul>
+          </li>
+          <li><b>Innovations:</b>
+              <ul>
+                  <li>Developed a compact, open-source system that can be easily installed on steering wheels or vehicle cabins for continuous driver monitoring.</li>
+                  <li>Enabled customization of heart rate thresholds, allowing personalized safety settings for different individuals.</li>
+                  <li>Integrated automatic braking systems with the heart rate monitor to ensure immediate action in case of emergencies.</li>
+              </ul>
+          </li>
+          <li><b>Applications:</b>
+              <ul>
+                  <li>Improved road safety by predicting and preventing accidents caused by medical emergencies such as heart arrhythmia.</li>
+                  <li>Enhanced vehicle intelligence by integrating driver state monitoring with automatic vehicle response systems.</li>
+                  <li>Provided real-time alerts and notifications to ensure timely medical attention for drivers during critical conditions.</li>
+              </ul>
+          </li>
+          <li><b>Results:</b>
+              <ul>
+                  <li>Demonstrated the system’s capability to differentiate normal and abnormal heart rates, triggering alerts and activating braking mechanisms effectively.</li>
+                  <li>Showcased a functional prototype with accurate BPM measurements and real-time emergency notifications.</li>
+              </ul>
+          </li>
+          <li><b>Conclusion:</b> This system provides a practical solution for enhancing driver and passenger safety by monitoring heart rate in real-time, predicting potential medical emergencies, and ensuring timely responses. It paves the way for intelligent vehicle systems with integrated health monitoring capabilities.</li>
+      </ul>
+    </div>
+    <a class="publication-link" href="https://ijsart.com/public/storage/paper/pdf/IJSARTV4I1027787.pdf" target="_blank"></a>
+        
     </div>
 
-    <div class="publication-entry">
+    <div class="publication-entry"><div class="publication-content"> 
         <div class="publication-title">Route Planning for Ships During Emergency Using Genetic Algorithm</div>
         <div class="publication-details">International Journal of Emerging Technologies in Engineering Research (IJETER), October 21, 2018</div>
-        <p>During sea navigation... (Shortened description)</p>
-        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+        <ul>
+          <li><b>Objective:</b> Proposed a simulation-based system using Genetic Algorithms (GA) for efficient and optimal route planning for ships during emergency situations such as low fuel or ship damage.</li>
+          <li><b>Key Contributions:</b>
+              <ul>
+                  <li>Designed a system that leverages GA to identify optimal or near-optimal routes in critical conditions, addressing technical constraints and environmental factors.</li>
+                  <li>Utilized ARPA (Automatic Radar Plotting Aids) data to plot obstacles and simulate safe navigation paths without actual ship movement.</li>
+                  <li>Modified GA’s fitness function to prioritize emergency constraints, ensuring efficient pathfinding while minimizing risks and resource wastage.</li>
+              </ul>
+          </li>
+          <li><b>Methodology:</b>
+              <ul>
+                  <li>Developed simulations in the Processing Programming Language to map obstacles and compute optimal routes using evolutionary GA methods.</li>
+                  <li>Implemented key GA operations such as population initialization, selection, crossover, and mutation to iteratively improve navigation paths.</li>
+                  <li>Integrated fitness functions to evaluate species (routes) based on their proximity to the destination, ensuring effective pathfinding during emergencies.</li>
+              </ul>
+          </li>
+          <li><b>Innovations:</b>
+              <ul>
+                  <li>Proposed a dynamic GA model adaptable to varying constraints, such as limited fuel or damaged ship conditions.</li>
+                  <li>Optimized mutation rates and lifetime parameters to balance simulation efficiency and accuracy during emergency scenarios.</li>
+                  <li>Provided a scalable framework to evaluate complex grids with numerous obstacles and potential paths.</li>
+              </ul>
+          </li>
+          <li><b>Applications:</b>
+              <ul>
+                  <li>Improved ship navigation systems by providing optimal pathfinding solutions during emergencies, reducing collision risks and resource usage.</li>
+                  <li>Enabled navigators to simulate and pre-plan routes in real-time, enhancing safety and operational efficiency.</li>
+              </ul>
+          </li>
+          <li><b>Results:</b>
+              <ul>
+                  <li>Demonstrated the effectiveness of GA-based simulations in identifying optimal routes within specified constraints.</li>
+                  <li>Highlighted the impact of mutation rates and lifetime settings on simulation performance, showcasing adaptability in emergency scenarios.</li>
+              </ul>
+          </li>
+          <li><b>Conclusion:</b> This research validates the use of Genetic Algorithms for emergency route planning in maritime navigation. By integrating ARPA data and simulation-based models, the system provides a robust and efficient framework for safe and resource-conscious ship navigation during critical situations.</li>
+      </ul>
+    </div>
+    <a class="publication-link" href="https://www.ijeter.everscience.org/Manuscripts/Volume-6/Issue-10/Vol-6-issue-10-M-10.pdf" target="_blank"></a>
+        
     </div>
 
     <section id="certifications-licenses">
@@ -590,21 +838,24 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
             <div class="role">Core Team</div>
             <div class="organization">TEXUS</div>
             <div class="dates">Jan 2020 - Mar 2020</div>
-            <p>A National Level Techfest which included 50+ Technical & Non-Technical Events, Hackathon, and more.  Engaged 7000+ students from 10+ national-level colleges/universities across Tamil Nadu. Organized Vh1 Supersonic Musical Night.</p>
+            <!-- <p>A National Level Techfest which included 50+ Technical & Non-Technical Events, Hackathon, and more.  Engaged 7000+ students from 10+ national-level colleges/universities across Tamil Nadu. Organized Vh1 Supersonic Musical Night.</p> -->
+            <p><b>Website:</b> <a href="https://texus.io" target="_blank">https://texus.io</a></p>
             <ul>
-                <li>Organized and handled a team to design a creative and appealing theme for the event.</li>
-                <li>Worked closely with the core team to manage and resolve event-related issues.</li>
-            </ul>
+              <li>Organized and managed a national-level tech fest with <b>50+ technical and non-technical events</b>, engaging <b>7,000+ participants</b> from <b>10+ colleges/universities</b> across Tamil Nadu.</li>
+              <li>Led a team to design and implement a <b>creative theme</b> for the event, ensuring consistent branding and visual appeal.</li>
+              <li>Collaborated with the core team to plan, execute, and resolve event-related challenges, including the successful organization of the <b>Vh1 Supersonic Musical Night</b>.</li>
+          </ul>
         </div>
 
         <div class="volunteering-entry">
             <div class="role">Event Coordinator</div>
             <div class="organization">TEXUS</div>
             <div class="dates">Mar 2018</div>
-            <p>A National Level Techfest... (Shortened - add details as needed)</p>
+            <p><b>Website:</b> <a href="https://texus.io" target="_blank">https://texus.io</a></p>
             <ul>
-                <li>Organized an event titled "Running Machine" encouraging students to develop RC vehicles.</li>
-                <li>Worked with the Cyborg club under SRMIST to design RC cars and the track.</li>
+                <li>Organized an event titled <b>"Running Machine"</b>, which encouraged students to develop Remote Controlled (RC) vehicles and showcase their engineering skills.</li>
+                <li>Collaborated with the <b>Cyborg Club</b> at SRMIST to design RC cars and develop a custom track for the competition.</li>
+                <li>Contributed to a tech fest that featured <b>50+ events</b>, a hackathon, and engaged <b>7,000+ participants</b> from <b>10+ esteemed colleges/universities</b> across Tamil Nadu.</li>
             </ul>
         </div>
 
@@ -612,7 +863,12 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
             <div class="role">CYBORG - Organizing Lead</div>
             <div class="organization">SRM University</div>
             <div class="dates">Mar 2018</div>
-            <p>Organized a workshop on Robotics titled "How Robotics is the Future" conducted by the Cyborg club.</p>
+            <ul>
+              <li>Organized a robotics workshop conducted by the <b>Cyborg Club</b> of the CSE Department at SRMIST.</li>
+              <li>Hosted a session led by <b>Mr. Tony Maciejewski</b>, Professor and Head of the ECE Department at Colorado State University.</li>
+              <li>The workshop inspired students across various departments to explore multi-disciplinary approaches and expand their understanding of robotics and its future potential.</li>
+          </ul>
+
             </div>
     </section>
   </section>
