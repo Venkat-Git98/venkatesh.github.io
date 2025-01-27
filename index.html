@@ -12,9 +12,7 @@
 <!-- Author Metadata -->
 <meta name="author" content="Venkatesh S" />
 <!-- Keyword Metadata -->
-<meta
-name="keywords"
-content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Health, The George Washington University, Data Science"
+<meta name="keywords" content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Health, The George Washington University, Data Science"
 />
 <!-- Webpage Logo -->
 <link rel="shortcut icon" href="./assets/img/favicon.ico" />
@@ -60,7 +58,7 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
     #experience {
       text-align: left;
       margin: 0 auto;
-      max-width: 800px;
+      max-width: 90%;
       padding: 0 20px;
   }
   
@@ -100,24 +98,12 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
   }
   
   #experience ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+      margin-top: 5px;
   }
   
   #experience li {
       margin-bottom: 8px;
-      padding-left: 20px;
       position: relative;
-  }
-  
-  #experience li::before {
-      content: "\2022";
-      position: absolute;
-      left: 0;
-      top: 0.2em;  /* Adjust vertical alignment if needed */
-      font-size: 1.2em;
-      color: #444;
   }
   
   
@@ -136,9 +122,9 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
 /* Projects Section Styling */
 /* Projects Section Styling */
 #projects {
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 75%;
   padding: 0 20px;
 }
 
@@ -180,39 +166,33 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
 #projects .project-title {
   font-weight: bold;
   margin-bottom: 5px;
+  text-align: left;
 }
 
 #projects .project-dates {
   font-size: 0.9em;
   color: #888;
   margin-bottom: 10px;
+  text-align: left;
+}
+
+#projects .project-description {
+  text-align: left;
 }
 
 #projects .project-description ul {
-  list-style: none; /* Remove default bullets */
-  padding: 0;
-  margin: 0;
+  margin-left: 0px; 
+  margin-top: 5px;
 }
 
 #projects .project-description > ul > li { /* Direct child list items */
   margin-bottom: 8px;
   position: relative; /* For positioning bullet points */
-  padding-left: 20px;
 }
 
-#projects .project-description > ul > li::before { /* Bullet points for main list items */
-  content: "\2022";
-  position: absolute;
-  left: 0;
-  top: 0.2em; /* Adjust vertical alignment if needed */
-  font-size: 1.2em;
-  color: #444;
-}
 
 /* Nested lists (for subtitles) */
 #projects .project-description ul ul {
-  list-style-type: disc;
-  margin-left: 20px; 
   margin-top: 5px; 
 }
 
@@ -226,10 +206,6 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
   border: none;
   cursor: pointer;
   margin-top: 10px;
-}
-
-#projects .project-link::before {
-  content: "Link: ";
 }
 
 #projects .project-link:hover {
@@ -282,12 +258,8 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
   border: none;
   cursor: pointer;
   order: 2;              /* Place the link after the content */
-  align-self: flex-start; /* Align link to the left */ 
-  margin-top: 10px;      /* Add some spacing above the link */
-}
-
-#publications .publication-link::before {
-  content: "Link";     /* Add "Link: " before the URL */
+  align-self: center;
+  margin-top: 10px; 
 }
 
 #publications .publication-link:hover {
@@ -296,10 +268,6 @@ content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Hea
 
 
 /* Consistent sub-bullet styles */
-#publications ul ul {
-list-style-type: disc;
-margin-left: 20px;
-}
 
 
 /* To keep consistent spacing, you may want to add margin to list items that DON'T have sub-lists*/
@@ -369,24 +337,13 @@ margin-left: 20px;
                 color: #888;
                 margin-bottom: 10px;
             }
-            #volunteering ul { /* Style for the list of activities */
-                list-style-type: none;
+            #volunteering ul { 
                 padding: 0;
                 margin: 0;
             }
             #volunteering li {
                 margin-bottom: 8px;
                 position: relative;
-                padding-left: 25px;
-            }
-            #volunteering li::before {
-                content: "\2022"; /* Disc bullet point */
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 1.2em;
-                color: #444;
             }
       
 </style>
@@ -619,7 +576,7 @@ margin-left: 20px;
           </ul>
           
           </div>
-          <a class="project-link" href="https://github.com/Venkat-Git98/RAG_Building_Codes_Virginia" target="_blank"></a> </div>
+          <a class="project-link" href="https://github.com/Venkat-Git98/RAG_Building_Codes_Virginia" target="_blank">Link</a> </div>
   </div>
 
 
@@ -652,6 +609,7 @@ margin-left: 20px;
         <div class="publication-title">An end-to-end unified framework for assessing Turning Movements based Deep Neural Network</div>
         <div class="publication-details">International Journal of Advanced Science and Technology, March 30, 2020</div>
         <!-- <p>Road traffic is a major issue in cities with increasing population... (Shortened description - Add more if needed)</p> -->
+        <ul>
         <li><b>Methodology:</b>
         <ul>
           <li>Leveraged <b>Artificial Neural Networks (ANNs)</b> combined with <b>Kalman Filters</b> to dynamically predict TM counts while accounting for external factors such as climate, road conditions, and natural events.</li>
@@ -672,8 +630,9 @@ margin-left: 20px;
       </ul>
   </li>
   <li><b>Future Scope:</b> Suggested further enhancements, including integrating real-time sensors and extending the model to autonomous traffic management systems.</li>
-</ul> </div>
-        <a class="publication-link" href="http://sersc.org/journals/index.php/IJAST/article/view/9778" target="_blank"></a>
+</ul>
+ </div>
+        <a class="publication-link" href="http://sersc.org/journals/index.php/IJAST/article/view/9778" target="_blank">Link</a>
         
     </div>
 
@@ -712,7 +671,7 @@ margin-left: 20px;
           <li><b>Conclusion:</b> While the app has certain limitations, it significantly enhances the learning experience by making education more interactive, immersive, and effective through the integration of AR and VR technologies.</li>
       </ul>
     </div>
-    <a class="publication-link" href="https://www.ijeat.org/wp-content/uploads/papers/v8i4/D6347048419.pdf" target="_blank"></a>
+    <a class="publication-link" href="https://www.ijeat.org/wp-content/uploads/papers/v8i4/D6347048419.pdf" target="_blank">Link</a>
        
     </div>
 
@@ -759,7 +718,7 @@ margin-left: 20px;
           <li><b>Conclusion:</b> This system provides a practical solution for enhancing driver and passenger safety by monitoring heart rate in real-time, predicting potential medical emergencies, and ensuring timely responses. It paves the way for intelligent vehicle systems with integrated health monitoring capabilities.</li>
       </ul>
     </div>
-    <a class="publication-link" href="https://ijsart.com/public/storage/paper/pdf/IJSARTV4I1027787.pdf" target="_blank"></a>
+    <a class="publication-link" href="https://ijsart.com/public/storage/paper/pdf/IJSARTV4I1027787.pdf" target="_blank">Link</a>
         
     </div>
 
@@ -804,7 +763,7 @@ margin-left: 20px;
           <li><b>Conclusion:</b> This research validates the use of Genetic Algorithms for emergency route planning in maritime navigation. By integrating ARPA data and simulation-based models, the system provides a robust and efficient framework for safe and resource-conscious ship navigation during critical situations.</li>
       </ul>
     </div>
-    <a class="publication-link" href="https://www.ijeter.everscience.org/Manuscripts/Volume-6/Issue-10/Vol-6-issue-10-M-10.pdf" target="_blank"></a>
+    <a class="publication-link" href="https://www.ijeter.everscience.org/Manuscripts/Volume-6/Issue-10/Vol-6-issue-10-M-10.pdf" target="_blank">Link</a>
         
     </div>
 
