@@ -1,291 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Metadata of the Webpage -->
-    <!-- Character-set Metadata -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Viewport Metadata -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Description Metadata-->
-    <meta name="description" content="Portfolio Website" />
-    <!-- Author Metadata -->
-    <meta name="author" content="Aditya Vikram Singh" />
-    <!-- Keyword Metadata -->
-    <meta
-      name="keywords"
-      content="Venkatesh S, Venkatesh S, Venkatesh S DPS,
-        Aditya Vikram Singh DPSRKP, Aditya Vikram Singh UMass, Aditya Vikram
-        Singh UMass Amherst, Aditya Vikram Singh New Delhi, Aditya Vikram
-        Singh Amherst, Aditya Vikram Singh ISSDC, Aditya Vikram Singh NASA,
-        Aditya Vikram Singh, Aditya Vikram Singh Website, Aditya V Singh"
-    />
-    <!-- Webpage Logo -->
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <!-- Webpage Title -->
-    <title>Aditya Vikram Singh</title>
+<head>
+<!-- Metadata of the Webpage -->
+<!-- Character-set Metadata -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Viewport Metadata -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Description Metadata-->
+<meta name="description" content="Portfolio Website of Venkatesh S, Machine Learning Engineer" />
+<!-- Author Metadata -->
+<meta name="author" content="Venkatesh S" />
+<!-- Keyword Metadata -->
+<meta
+name="keywords"
+content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Health, The George Washington University, Data Science"
+/>
+<!-- Webpage Logo -->
+<link rel="shortcut icon" href="./assets/img/favicon.ico" />
+<!-- Webpage Title -->
+<title>Venkatesh S</title>
 
-    <!-- Import CSS: Main Stylesheet -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
-  </head>
+<!-- Import CSS: Main Stylesheet -->
+<link rel="stylesheet" href="./assets/css/main.css" />
+<style>
+  /* Skill section styling */
+    /* Skill section styling */
+    .skill-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px; /* Reduced gap */
+      margin-bottom: 20px;
+      padding: 0 5%; /* Reduced padding */
+  }
 
-  <body>
-    <div id="particles-js">
-      <div class="header">
-        <h1>
-          <span class="site-title">Venkatesh S</span>
-          <span class="site-description">ML Engineer • Data Scientist</span>
-        </h1>
-        <div class="header-icons">
-          <a aria-label="My LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/avs1508/">
-            <i class="icon fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-          <a aria-label="My Github Profile" target="_blank" href="https://github.com/AVS1508">
-            <i class="icon fa fa-github-alt" aria-hidden="true"></i>
-          </a>
-          <a aria-label="My Résumé" target="_blank" href="https://www.adityavsingh.com/resume.html">
-            <i class="icon fa fa fa-file-pdf-o" aria-hidden="true"></i>
-          </a>
-          <a aria-label="Send Email" href="mailto:avsingh@umass.edu" target="_blank"
-            ><i class="icon fa fa-envelope"></i
-          ></a>
-        </div>
-        <div class="header-links">
-          <a class="link" href="#about" data-scroll>About Me</a>
-          <a class="link" href="#projects" data-scroll>Projects</a>
-        </div>
-      </div>
-      <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+  .skill-section h3 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.em; /* Smaller font size */
+  }
+
+  .skill-section img {
+      flex: 0 0 calc(35% - 10px); /* Smaller width */
+      max-width: 100px; /* Much smaller max-width */
+      height: auto;
+      margin: 0;
+  }
+
+  /* Add container width constraint */
+  .user {
+      max-width: 800px;
+      margin: 0 auto;
+  }
+  /* Experience section styling */
+/* Experience section styling */
+    /* Experience section styling */
+    #experience {
+      text-align: center;
+  }
+
+  #experience h1 {
+      margin-bottom: 30px;
+  }
+
+  #experience .experience-entry {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+  }
+
+  #experience .company-logo {
+      width: 100px; /* Adjust size as needed */
+      height: 50px; /* Adjust size as needed */
+      margin-right: 20px; /* Space between the logo and details */
+  }
+
+  #experience .details {
+       flex: 1;
+       text-align: left;
+  }
+
+  #experience .job-title {
+      font-weight: bold;
+       margin-bottom: 5px;
+  }
+
+   #experience .info {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 10px;
+  }
+
+
+  #experience ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+  }
+  #experience li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 25px;
+  }
+  #experience li::before {
+      content: "\2022";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+      color: #444;
+  }
+
+/* Projects Section Styling */
+#projects {
+    text-align: center; /* Center the "Projects" heading */
+}
+#projects h1 {
+    margin-bottom: 30px;
+}
+#projects .project-entry {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; /* Center horizontally */
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+#projects .project-image {
+    width: 200px; /* Adjust image size as needed */
+    height: auto;
+    margin-right: 20px;  /* Add space between image and details */
+}
+#projects .project-details {
+    flex: 1;           /* Let details take up available space */
+    text-align: left;
+}
+#projects .project-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#projects .project-dates {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+#projects .project-description ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+#projects .project-description li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px;   /* Add space for the custom bullet point */
+}
+#projects .project-description li::before {
+    content: "\2022";      /* Unicode character for a disc */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #444;         /* Adjust bullet point color as needed */
+}
+#projects .project-link {
+    display: inline-block;  /* Make it behave like a link */
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff; /* Example color - customize */
+    color: white;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+}
+#projects .project-link:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Make the project image responsive */
+@media (max-width: 768px) {
+    #projects .project-entry {
+        flex-direction: column;  /* Stack image and details vertically */
+        text-align: center; 
+      }
+      #projects h1 {
+          margin-bottom: 30px;
+      }
+      #projects .project-entry {
+          margin-bottom: 30px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #eee;
+          text-align: left;  /* Align project details to the left */
+      }
+}
+
+  /* Publications Section Styling */
+ #publications {
+     text-align: center;
+ }
+ #publications h1 {
+     margin-bottom: 30px;
+ }
+ #publications .publication-entry {
+     margin-bottom: 20px;
+     padding-bottom: 15px;
+     border-bottom: 1px solid #eee; /* Optional separator */
+     text-align: left; /* Align publication details left */
+ }
+ #publications .publication-title {
+     font-style: italic; /* Italicize title */
+     margin-bottom: 5px;
+ }
+ #publications .publication-details {
+     font-size: 0.9em;
+     color: #888;
+     margin-bottom: 10px;
+ }
+ #publications .publication-link {  /* Style for publication links */
+     color: #007bff; /* Example - Customize */
+     text-decoration: none;
+ }
+ #publications .publication-link:hover {
+     text-decoration: underline;
+ }
+         /* Certifications & Licenses Section Styling */
+         #certifications-licenses {
+          text-align: center;
+      }
+      #certifications-licenses h1 {
+          margin-bottom: 30px;
+      }
+      #certifications-licenses .certification-entry,
+      #certifications-licenses .license-entry {
+          margin-bottom: 20px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid #eee;
+          text-align: left; 
+      }
+      #certifications-licenses .certification-title,
+      #certifications-licenses .license-title {
+          font-weight: bold;
+          margin-bottom: 5px;
+      }
+      #certifications-licenses .issuer,
+      #certifications-licenses .license-issuer {
+          font-style: italic;
+          margin-bottom: 5px;
+      }
+      #certifications-licenses .date,
+      #certifications-licenses .license-date {
+          font-size: 0.9em;
+          color: #888;
+      }
+      /* Optional: Add styles for credential links if needed */
+      #certifications-licenses .credential-link {
+          color: #007bff;
+          text-decoration: none;
+      }
+      #certifications-licenses .credential-link:hover {
+          text-decoration: underline;
+      }
+              /* Volunteering Section Styling */
+              #volunteering {
+                text-align: center; /* Center the main heading */
+            }
+            #volunteering h1 {
+                margin-bottom: 30px;
+            }
+            #volunteering .volunteering-entry {
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eee; /* Optional separator */
+                text-align: left;           /* Align details to the left */
+            }
+            #volunteering .role {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            #volunteering .organization {
+                font-style: italic;
+                margin-bottom: 5px;
+            }
+            #volunteering .dates {
+                font-size: 0.9em;
+                color: #888;
+                margin-bottom: 10px;
+            }
+            #volunteering ul { /* Style for the list of activities */
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            #volunteering li {
+                margin-bottom: 8px;
+                position: relative;
+                padding-left: 25px;
+            }
+            #volunteering li::before {
+                content: "\2022"; /* Disc bullet point */
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.2em;
+                color: #444;
+            }
+      
+</style>
+</head>
+
+<body>
+<div id="particles-js">
+  
+<div class="header">
+<h1>
+<span class="site-title">Venkatesh S</span>
+<span class="site-description">Machine Learning Engineer at ScriptChain Health</span>
+</h1>
+<div class="header-icons">
+<a aria-label="My LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/svenkatesh-js/">
+<i class="icon fa fa-linkedin" aria-hidden="true"></i>
+</a>
+<a aria-label="My Github Profile" target="_blank" href="https://github.com/Venkat-Git98">  <!-- Replace with your GitHub username -->
+<i class="icon fa fa-github-alt" aria-hidden="true"></i>
+</a>
+<a aria-label="Send Email" href="mailto:svenkatesh.js@gmail.com" target="_blank">  <!-- Replace with your email address -->
+<i class="icon fa fa-envelope"></i>
+</a>
+</div>
+<div class="header-links">
+<a class="link" href="#about" data-scroll>About Me</a>
+
+</div>
+</div>
+<a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+
+</div>
+
+<!-- About Section -->
+  <!-- About Section -->
+  <section id="about">
+    <div class="user-details">
+      <h1>About Me</h1>
+      <picture>
+        <source type="image/webp" srcset="./assets/img/webp/venkat.jpeg" alt="Venkatesh S" width="20%" style="border-radius: 50%">
+        <img src="./assets/img/jpg/your-professional-photo.jpg" alt="Venkatesh S" width="20%" style="border-radius: 50%">
+      </picture>
+      <p>
+        I am Venkatesh S, a Machine Learning Engineer specializing in AI solutions for healthcare at ScriptChain Health.  I am currently pursuing a Master's in Computer Science at The George Washington University, focusing on applying the latest advancements in AI and ML research, including the integration of large language models for accurate and timely data analysis.
+      </p>
+      <p>
+        At ScriptChain Health, I lead the development of AI models to predict patient readmissions.  This involves researching and implementing cutting-edge techniques, handling temporal data, and leveraging AWS cloud technologies such as Bedrock and Athena for scalable model training and data management. I am passionate about using my skills to improve patient outcomes and drive innovation in healthcare analytics.
+      </p>
+      <p>
+        In addition to my work at ScriptChain Health, I contribute to the academic community as a Data Consultant at GW. I provide support to students, faculty, and staff on advanced statistical analysis using various software and programming languages like R, Python, and Tableau. I enjoy empowering others with data-driven insights and fostering a collaborative learning environment.
+      </p>
+      <p>
+          Prior to my current roles, I gained valuable experience as an RPA Developer at Tata Consultancy Services and further honed my skills during my internship at TCS iON. My diverse background has equipped me with a strong foundation in software development, data analysis, and cloud technologies.  I am eager to continue contributing to the impactful intersection of AI and healthcare.
+      </p>
     </div>
 
-    <!-- About Section -->
-    <section id="about">
-      <!-- User Introduction-->
-      <div class="user-details">
-        <h1>My Story</h1>
-        <picture>
-          <source
-            type="image/webp"
-            srcset="./assets/img/webp/Professional-Picture-Me.webp"
-            alt="Professional Me"
-            width="20%"
-            style="border-radius: 50%"
-          />
-          <img
-            src="./assets/img/jpg/Professional-Picture-Me.jpg"
-            alt="Professional Me"
-            width="20%"
-            style="border-radius: 50%"
-          />
-        </picture>
-        <p>
-          I am a junior in the College of Information and Computer Sciences at the University of Massachusetts Amherst,
-          pursuing an undergraduate degree. I am majoring in Computer Science, with intent to double major in
-          Mathematics with Statistics and Data Science concentration. I'm involved as a Software Developer for BUILD
-          UMass, where I use my software engineering skills for pro-bono app/web development and tech consulting for the
-          Amherst community. I also serve as a Designer for the HackUMass Organizing Team, responsible for graphics
-          design and production for the annual hackathon. I am interested in exploring the fields of Software
-          Engineering, Data Science, and Machine Learning, and I am open to opportunities for the same.
-        </p>
-      </div>
+    <!-- Skills Section (You can customize this further) -->
 
-      <!-- User Specifics -->
+    <section id="skills">  <!-- Give the skills section an ID -->
       <div class="user">
-        <!-- Technology Stack #1: Languages -->
-        <div class="tech">
-          <h2>Languages</h2>
-          <i class="devicon-python-plain colored"></i>
-          <i class="devicon-java-plain-wordmark colored"></i>
-          <i class="devicon-cplusplus-plain colored"></i>
-          <i class="devicon-javascript-plain colored"></i>
-          <p>My favorite languages for systems programming, software engineering, and data analysis.</p>
+          <h2></h2>
+
+          <div class="skill-section">
+              <h3>Languages</h3>
+              <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+              <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" alt="PySpark">
+              <img src="https://img.shields.io/badge/LangChain-121D33?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain">
+              <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
+          </div>
+
+
+          <div class="skill-section">
+            <h3>Cloud</h3>
+            <img src="https://img.shields.io/badge/DOCKER-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+            <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
+            <img src="https://img.shields.io/badge/GCP-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCP">
+            <img src="https://img.shields.io/badge/GIT-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
         </div>
 
-        <!-- Technology Stack #2: Front-End -->
-        <div class="tech">
-          <h2>Front-End</h2>
-          <i class="devicon-react-original colored"></i>
-          <i class="devicon-bootstrap-plain-wordmark colored"></i>
-          <i class="devicon-html5-plain-wordmark colored"></i>
-          <i class="devicon-css3-plain-wordmark colored"></i>
-          <p>My preferred technologies for front-end web development and component design.</p>
-        </div>
+          <div class="skill-section">
+              <h3>Data Tools</h3>
+              <img src="https://img.shields.io/badge/sql-%2307405e.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
+              <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" alt="DuckDB">
+              <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white" alt="Tableau">
+              <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow">
 
-        <!-- Technology Stack #3: Back-End -->
-        <div class="tech">
-          <h2>Back-End</h2>
-          <i class="devicon-nodejs-plain colored"></i>
-          <i class="devicon-express-original-wordmark colored"></i>
-          <i class="devicon-mongodb-plain-wordmark colored"></i>
-          <i class="devicon-postgresql-plain-wordmark colored"></i>
-          <p>My preferred technologies for back-end web programming and database architecture.</p>
-        </div>
+           </div>
 
-        <!-- Technology Stack #4: Tools -->
-        <div class="tech">
-          <h2>Tools</h2>
-          <i class="devicon-git-plain-wordmark colored"></i>
-          <i class="devicon-visualstudio-plain colored"></i>
-          <i class="devicon-github-plain-wordmark colored"></i>
-          <i class="devicon-docker-plain-wordmark colored"></i>
-          <p>My favorite tools for version control, code editing, and container orchestration.</p>
-        </div>
+
+
+          <!-- <div class="skill-section">
+              <h3>Other Tools</h3>
+              <img src="https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium">
+              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+              <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
+
+          </div> -->
+
+
       </div>
+  </section>
+  </section>
+
+<!-- User Introduction-->
+ <div class="user-details">
+
+  <section id="experience">
+    <h1>Experience</h1>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/scriptchain.png" alt="ScriptChain Health Logo">
+        <div class="details">
+            <div class="job-title">Machine Learning Engineer</div>
+            <div class="info">
+                <div class="company-name">ScriptChain Health</div>
+                <div class="dates">May 2024 - Present</div>
+                <div class="location">United States</div>
+            </div>
+            <ul>
+                <li></b>Achieved impactful results:</b> Developed and deployed AI models to predict heart disease readmissions, achieving over 75% accuracy through cutting-edge neural networks and temporal dependency analysis.</li>
+                <li>Personalized healthcare solutions: Designed a Graph RAG system using Vertex AI’s Gemini to generate personalized diet and exercise recommendations, enhancing patient engagement and outcomes.</li>
+                <li>Privacy-first AI development: Engineered federated learning pipelines to securely process sensitive health data, ensuring privacy compliance while achieving 95% data processing accuracy.</li>
+                <li>End-to-end AI implementation: Spearheaded all phases of machine learning workflows, including data preprocessing, model training, and scalable deployment using AWS Bedrock and Athena.</li>
+                <li>Collaborative innovation: Partnered with cross-functional teams to integrate AI solutions into healthcare systems, driving real-world impact by reducing patient readmissions and improving care delivery.</li>
+                <li>Research-driven innovation: Applied methodologies from leading-edge research to enhance model performance, specifically in handling temporal data and advancing predictive analytics.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/gwu.png" alt="The George Washington University Logo">
+       <div class="details">
+            <div class="job-title">Data Consultant</div>
+            <div class="info">
+                <div class="company-name">The George Washington University</div>
+                <div class="dates">Aug 2024 - Present</div>
+                <div class="location">United States (On-site)</div>
+            </div>
+             <ul>
+                <li>Providing advanced statistical analysis and data consultation to students, faculty, and staff.</li>
+                <li>Supporting research and academic projects using R, Python, and other statistical software.</li>
+                <li>Assisting and leading workshops to enhance data handling and analysis capabilities.</li>
+                <li>Continuously expanding expertise in data analysis platforms like GIS software, MATLAB, and Tableau.</li>
+                <li>Fostering critical thinking and technical skills in learners.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/tcs.png" alt="Tata Consultancy Services Logo">
+        <div class="details">
+             <div class="job-title">Digital Transformation Developer</div>
+             <div class="info">
+                 <div class="company-name">Tata Consultancy Services</div>
+                 <div class="dates">Apr 2021 - Aug 2023</div>
+                 <div class="location">Chennai, Tamil Nadu, India (On-site)</div>
+             </div>
+             <ul>
+                 <li>Analyzed existing telecom processes and identified areas for automation.</li>
+                <li>Designed and developed RPA solutions using industry-standard tools and frameworks.</li>
+                 <li>Automated repetitive tasks such as data entry, invoice processing, and customer onboarding.</li>
+                 <li>Integrated RPA solutions with various telecom systems and applications.</li>
+                 <li>Conducted thorough testing and debugging of RPA solutions.</li>
+                <li>Provided ongoing maintenance and support for deployed RPA solutions.</li>
+                 <li>Continuously sought opportunities to optimize and improve existing automation solutions.</li>
+             </ul>
+        </div>
+    </div>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/tcs_ion.png" alt="TCS iON Logo">
+        <div class="details">
+            <div class="job-title">Developer</div>
+            <div class="info">
+                 <div class="company-name">TCS iON - Infogro Technolog</div>
+                <div class="dates">May 2018 - Jun 2018</div>
+                <div class="location">Chennai, Tamil Nadu, India</div>
+           </div>
+            <ul>
+               <li>Completed training under 'Infogro Technology' supported by Skill Development Centre, TCS iON.</li>
+                <li>Successfully completed assigned project and gained knowledge in Python.</li>
+           </ul>
+        </div>
+   </div>
+
+</section>
+<section id="projects">
+  <h1>Projects</h1>
+
+  <div class="project-entry">  <!-- No image container anymore -->
+      <div class="project-details">
+          <div class="project-title">Building Code Compliance: Navigating Complexity with AI</div>
+          <div class="project-dates">Nov 2024 - Present</div>
+          <div class="project-description">
+              <ul>
+                  <li>Developed a Retrieval-Augmented Generation (RAG) system for technical queries.</li>
+                  <li>Utilized Pinecone, Google BigBird/OpenAI embeddings, and custom prompts for efficient data management.</li>
+                  <li>Engineered GPT-4o for query augmentation and robust reference handling.</li>
+                  <li>Automated data scraping and applied hybrid chunking techniques for optimized processing.</li>
+                  <li>Deployed an interactive Streamlit application with GPT-4o for precise answer generation.</li>
+              </ul>
+          </div>
+          <a class="project-link" href="#" target="_blank">Project Link (Replace with actual link)</a> </div>
+  </div>
+
+
+
+  <div class="project-entry"> <!-- No image container -->
+    <div class="project-details">
+        <div class="project-title">AI Text Discriminator</div>
+        <div class="project-dates">Mar 2024 - Apr 2024</div>
+        <div class="project-description">
+            <ul>
+                  <li>Designed and implemented an AI-based text classification system.</li>
+                  <li>Fine-tuned RoBERTa and GPT-2 models on a custom dataset.</li>
+                  <li>Created an ensemble model for enhanced accuracy (97%).</li>
+              </ul>
+          </div>
+           <a class="project-link" href="#" target="_blank">Project Link (Replace with actual link)</a> </div>
+  </div>
+  <section id="publications">
+    <h1>Publications</h1>
+
+    <div class="publication-entry">
+        <div class="publication-title">An end-to-end unified framework for assessing Turning Movements based Deep Neural Network</div>
+        <div class="publication-details">International Journal of Advanced Science and Technology, March 30, 2020</div>
+        <p>Road traffic is a major issue in cities with increasing population... (Shortened description - Add more if needed)</p>
+        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+    </div>
+
+    <div class="publication-entry">
+        <div class="publication-title">Enhanced Learning with Augmented Reality and Virtual Reality</div>
+        <div class="publication-details">International Journal of Engineering and Advanced Technology (IJEAT), April 1, 2019</div>
+        <p>AR can play a crucial role... (Shortened description)</p>
+        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+    </div>
+
+    <div class="publication-entry">
+        <div class="publication-title">HEART BEAT MONITORING SYSTEM AND ALERTING INDICATOR FOR DRIVER’S SAFETY</div>
+        <div class="publication-details">International Journal for Science and Advance Research in Technology (IJSART), October 26, 2018</div>
+        <p>Now a days we have... (Shortened description)</p>
+        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+    </div>
+
+    <div class="publication-entry">
+        <div class="publication-title">Route Planning for Ships During Emergency Using Genetic Algorithm</div>
+        <div class="publication-details">International Journal of Emerging Technologies in Engineering Research (IJETER), October 21, 2018</div>
+        <p>During sea navigation... (Shortened description)</p>
+        <a class="publication-link" href="#" target="_blank">Publication Link (Replace with actual link)</a>
+    </div>
+
+    <section id="certifications-licenses">
+      <h1>Certifications & Licenses</h1>
+
+
+      <div class="certification-entry">
+          <div class="certification-title">Tableau Desktop Certified Professional Certification</div>
+          <div class="issuer">Tableau</div>
+          <div class="date">Issued Apr 2022 &middot; Expires Apr 2025</div>
+          <div>Credential ID: TAB1056IND</div>  </div>
+
+      <div class="certification-entry">
+          <div class="certification-title">Programming in Python</div>
+          <div class="issuer">Meta</div>
+          <div class="date">Issued Aug 2022</div> </div>
+
+
+<!-- 
+      <h2>Licenses (Optional - Add if you have any)</h2>  <div class="license-entry">
+          <div class="license-title">Example License Title</div>
+          <div class="license-issuer">Issuing Authority</div>
+          <div class="license-date">Issue/Expiry Date</div>
+          <div> <a class="credential-link" href="#" target="_blank">License Link (Optional)</a> </div>
+      </div> -->
+      <section id="volunteering">
+        <h1>Volunteering</h1>
+
+        <div class="volunteering-entry">
+            <div class="role">Core Team</div>
+            <div class="organization">TEXUS</div>
+            <div class="dates">Jan 2020 - Mar 2020</div>
+            <p>A National Level Techfest which included 50+ Technical & Non-Technical Events, Hackathon, and more.  Engaged 7000+ students from 10+ national-level colleges/universities across Tamil Nadu. Organized Vh1 Supersonic Musical Night.</p>
+            <ul>
+                <li>Organized and handled a team to design a creative and appealing theme for the event.</li>
+                <li>Worked closely with the core team to manage and resolve event-related issues.</li>
+            </ul>
+        </div>
+
+        <div class="volunteering-entry">
+            <div class="role">Event Coordinator</div>
+            <div class="organization">TEXUS</div>
+            <div class="dates">Mar 2018</div>
+            <p>A National Level Techfest... (Shortened - add details as needed)</p>
+            <ul>
+                <li>Organized an event titled "Running Machine" encouraging students to develop RC vehicles.</li>
+                <li>Worked with the Cyborg club under SRMIST to design RC cars and the track.</li>
+            </ul>
+        </div>
+
+        <div class="volunteering-entry">
+            <div class="role">CYBORG - Organizing Lead</div>
+            <div class="organization">SRM University</div>
+            <div class="dates">Mar 2018</div>
+            <p>Organized a workshop on Robotics titled "How Robotics is the Future" conducted by the Cyborg club.</p>
+            </div>
     </section>
+  </section>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="user-details">
-        <h1>Featured Projects</h1>
-      </div>
 
-      <!-- User Project #1: Personal Résumé Website -->
-      <div class="user-projects">
-        <div class="images-right">
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/Personal-Resume-Website.webp" alt="Personal Website" />
-            <img alt="Personal Website" src="./assets/img/jpg/Personal-Resume-Website.jpg" />
-          </picture>
-        </div>
-        <div class="contents" style="text-align: center">
-          <h3>Personal Website</h3>
-          <div>
-            <img
-              height="32"
-              width="32"
-              src="https://unpkg.com/simple-icons@3.4.0/icons/react.svg"
-              style="filter: invert(73%) sepia(74%) saturate(1552%) hue-rotate(169deg) brightness(109%) contrast(97%)"
-            />
-            &nbsp;
-            <img
-              height="32"
-              width="32"
-              src="https://unpkg.com/simple-icons@3.4.0/icons/bootstrap.svg"
-              style="filter: invert(24%) sepia(14%) saturate(2270%) hue-rotate(222deg) brightness(102%) contrast(90%)"
-            />
-            &nbsp;
-            <img height="32" width="32" src="https://unpkg.com/simple-icons@3.4.0/icons/github.svg" />
-          </div>
-          <p style="text-align: justify">
-            I developed and designed a website using ReactJS and Bootstrap, hosted on Github Pages, to showcase my web
-            presence, story, work experience, education, projects, and achievements in an interactive and
-            visually-appealing format.
-          </p>
-          <a class="project-link" target="_blank" href="https://www.adityavsingh.com/">Check it out!</a>
-        </div>
-      </div>
-
-      <!-- User Project #2: Summer 2020 Project -->
-      <div class="user-projects">
-        <div class="images-left">
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/Perpetual-Crusades.webp" alt="Perpetual Crusades" />
-            <img alt="Perpetual Crusades" src="./assets/img/jpg/Perpetual-Crusades.jpg" />
-          </picture>
-        </div>
-        <div class="contents-right" style="text-align: center">
-          <h3>Perpetual Crusades</h3>
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/react.svg"
-            style="filter: invert(73%) sepia(74%) saturate(1552%) hue-rotate(169deg) brightness(109%) contrast(97%)"
-          />
-          &nbsp;
-          <img
-            height="32"
-            width="32"
-            src="https://unpkg.com/simple-icons@3.4.0/icons/css3.svg"
-            style="filter: invert(33%) sepia(29%) saturate(3844%) hue-rotate(184deg) brightness(90%) contrast(84%)"
-          />
-          &nbsp;
-          <img height="32" width="32" src="https://unpkg.com/simple-icons@3.4.0/icons/github.svg" />
-          <p style="text-align: justify">
-            I created a two-player online dice-based board game with a theme loosely set around Dungeons & Dragons. It
-            was developed as a submission for Penn Apps XXI, using ReactJS and CSS Grid Layouts for design and hosted on
-            GitHub Pages.
-          </p>
-          <a class="project-link" target="_blank" href="https://github.com/AVS1508/Summer-2020-Project"
-            >Check it out!</a
-          >
-        </div>
-      </div>
-
-      <!-- User Project #3: COVID-19 Tracker App -->
-      <div class="user-projects">
-        <div class="images-right">
-          <picture>
-            <source type="image/webp" srcset="./assets/img/webp/COVID19-Tracker-App.webp" alt="COVID-19 Tracker App" />
-            <img alt="COVID-19 Tracker App" src="./assets/img/jpg/COVID19-Tracker-App.jpg" />
-          </picture>
-        </div>
-        <div class="contents" style="text-align: center">
-          <h3>COVID-19 Tracker App</h3>
-          <div>
-            <img
-              height="32"
-              width="32"
-              src="https://unpkg.com/simple-icons@3.4.0/icons/javascript.svg"
-              style="filter: invert(96%) sepia(47%) saturate(4151%) hue-rotate(338deg) brightness(100%) contrast(95%)"
-            />
-          </div>
-          <p style="text-align: justify">
-            I created a web application for tracking the spread of COVID-19. Using Johns Hopkins University Center For
-            Systems Science and Engineering API, the website processes the COVID-19 data to create statistical
-            projections through graphs and charts.
-          </p>
-          <a class="project-link" target="_blank" href="https://www.adityavsingh.com/covid19-tracker-app">
-            Check it out!
-          </a>
-        </div>
-      </div>
-
-      <!-- Use Project #4: Valuto: Account Management System -->
-      <div class="user-projects">
-        <div class="images-left">
-          <picture>
-            <source
-              type="image/webp"
-              srcset="./assets/img/webp/Valuto-Account-Management.webp"
-              alt="Valuto: Account Management System"
-            />
-            <img alt="Valuto: Account Management System" src="./assets/img/jpg/Valuto-Account-Management.jpg" />
-          </picture>
-        </div>
-        <div class="contents-right" style="text-align: center">
-          <h3>Valuto: Account Management System</h3>
-          <div>
-            <img
-              height="32"
-              width="32"
-              src="https://unpkg.com/simple-icons@3.4.0/icons/cplusplus.svg"
-              style="filter: invert(22%) sepia(77%) saturate(1486%) hue-rotate(183deg) brightness(101%) contrast(103%)"
-            />
-          </div>
-          <p style="text-align: justify">
-            I developed a CLI system for accounting management and financial statement maintenance. The purpose of the
-            system is to maintain a record of the funds received, used, disseminated and donated by an organization.
-            Details of transactions and maintenance of a budget and tallying of current balance/inventory in cash/kind
-            is incorporated in this system.
-          </p>
-          <a class="project-link" target="_blank" href="https://github.com/AVS1508/Valuto-Account-Management-System">
-            Check it out!
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>&copy; Aditya Vikram Singh, 2020</p>
-    </footer>
-
+<footer class="footer">
+<p>&copy; Venkatesh S, 2025</p> </footer>
     <!-- Import JS: Particles Theme -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Import JS: Sweet Scroll -->
     <script src="./assets/js/sweet-scroll.min.js"></script>
-    <!-- Import JS: Google Analytics -->
-    <script src="./assets/js/google-analytics.js"></script>
     <!-- Import JS: Main Script -->
-    <script src="./assets/js/main.js"></script>
-  </body>
+    <script src="./assets/js/main.js"></script>  </body>
+</html>
+
+</body>
 </html>

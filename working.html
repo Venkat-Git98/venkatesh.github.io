@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Metadata of the Webpage -->
+<!-- Character-set Metadata -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Viewport Metadata -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Description Metadata-->
+<meta name="description" content="Portfolio Website of Venkatesh S, Machine Learning Engineer" />
+<!-- Author Metadata -->
+<meta name="author" content="Venkatesh S" />
+<!-- Keyword Metadata -->
+<meta
+name="keywords"
+content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Health, The George Washington University, Data Science"
+/>
+<!-- Webpage Logo -->
+<link rel="shortcut icon" href="./assets/img/favicon.ico" />
+<!-- Webpage Title -->
+<title>Venkatesh S</title>
+
+<!-- Import CSS: Main Stylesheet -->
+<link rel="stylesheet" href="./assets/css/main.css" />
+<style>
+  /* Skill section styling */
+    /* Skill section styling */
+    .skill-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px; /* Reduced gap */
+      margin-bottom: 20px;
+      padding: 0 5%; /* Reduced padding */
+  }
+
+  .skill-section h3 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 1.em; /* Smaller font size */
+  }
+
+  .skill-section img {
+      flex: 0 0 calc(35% - 10px); /* Smaller width */
+      max-width: 100px; /* Much smaller max-width */
+      height: auto;
+      margin: 0;
+  }
+
+  /* Add container width constraint */
+  .user {
+      max-width: 800px;
+      margin: 0 auto;
+  }
+  /* Experience section styling */
+/* Experience section styling */
+    /* Experience section styling */
+    #experience {
+      text-align: center;
+  }
+  
+  #experience h1 {
+      margin-bottom: 30px;
+  }
+  
+  #experience .experience-entry {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+  }
+  
+  #experience .company-logo {
+      width: 100px; /* Fixed width */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: contain; /* Prevent image distortion */
+      margin-right: 20px; 
+  }
+  
+  #experience .details {
+      flex: 1;
+      text-align: left;
+  }
+  
+  #experience .job-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+  
+  #experience .info {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 10px;
+  }
+  
+  #experience ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      list-style-position: inside; /* Bullet points inside the list item */
+  }
+  
+  #experience li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px; /* Add padding for bullet point space */
+  }
+  
+  #experience li::before {
+      content: "\2022"; /* Use Unicode for bullet */
+      position: absolute;
+      left: 0;
+      top: 0.5em; /* Vertical alignment with text */
+      font-size: 1.2em;
+      color: #444;
+  }
+  
+
+/* Projects Section Styling */
+#projects {
+  text-align: center;
+}
+
+#projects h1 {
+  margin-bottom: 30px;
+}
+
+#projects .project-entry {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+#projects .project-image { /* If you later add images back */
+  width: 200px; 
+  height: auto;
+  margin-right: 20px;
+}
+
+#projects .project-details {
+  flex: 1;
+  text-align: left;
+}
+
+#projects .project-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#projects .project-dates {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+#projects .project-description ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#projects .project-description > ul > li { /* Top-level li */
+  margin-bottom: 8px;
+  padding-left: 0; /* No padding for top level items */
+}
+
+/* IMPORTANT: No bullet point here for top-level items */
+
+#projects .project-description ul ul { /* Nested lists (subtitles) */
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+#projects .project-description ul ul li { /* List items WITHIN subtitles*/
+  margin-bottom: 5px; /* Space between sub-list items */
+  padding-left: 0;  /* Remove the now-doubled padding */
+}
+#projects .project-link {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;  /* Make it look clickable */
+  margin-top: 10px;
+}
+
+#projects .project-link::before {
+  content: "Link ";
+}
+
+#projects .project-link:hover {
+  background-color: #0056b3;
+
+}
+
+@media (max-width: 768px) {
+  #projects .project-entry {
+      flex-direction: column;
+      text-align: center; /* Center on smaller screens */
+  }
+  #projects .project-details {
+      text-align: left; /* Re-align details to left */
+  }
+}
+
+/* Publications Section Styling */
+#publications {
+  text-align: center;
+}
+
+#publications h1 {
+  margin-bottom: 30px;
+}
+
+#publications .publication-entry {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  display: flex;          /* Use flexbox for alignment */
+  flex-direction: column;  /* Stack elements vertically */
+}
+
+
+#publications .publication-content { /* New container for text content */
+  order: 1;                /* Place content before the link */
+}
+
+#publications .publication-title {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+#publications .publication-details {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+
+/* Style the publication link as a button */
+#publications .publication-link {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  order: 2;              /* Place the link after the content */
+  align-self: flex-start; /* Align link to the left */ 
+  margin-top: 10px;      /* Add some spacing above the link */
+}
+
+#publications .publication-link::before {
+  content: "Link";     /* Add "Link: " before the URL */
+}
+
+#publications .publication-link:hover {
+  background-color: #0056b3;
+}
+
+
+/* Consistent sub-bullet styles */
+#publications ul ul {
+list-style-type: disc;
+margin-left: 20px;
+}
+
+
+/* To keep consistent spacing, you may want to add margin to list items that DON'T have sub-lists*/
+#publications ul > li:not(:has(ul)) {
+  margin-bottom: 8px;
+}
+         /* Certifications & Licenses Section Styling */
+         #certifications-licenses {
+          text-align: center;
+      }
+      #certifications-licenses h1 {
+          margin-bottom: 30px;
+      }
+      #certifications-licenses .certification-entry,
+      #certifications-licenses .license-entry {
+          margin-bottom: 20px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid #eee;
+          text-align: left; 
+      }
+      #certifications-licenses .certification-title,
+      #certifications-licenses .license-title {
+          font-weight: bold;
+          margin-bottom: 5px;
+      }
+      #certifications-licenses .issuer,
+      #certifications-licenses .license-issuer {
+          font-style: italic;
+          margin-bottom: 5px;
+      }
+      #certifications-licenses .date,
+      #certifications-licenses .license-date {
+          font-size: 0.9em;
+          color: #888;
+      }
+      /* Optional: Add styles for credential links if needed */
+      #certifications-licenses .credential-link {
+          color: #007bff;
+          text-decoration: none;
+      }
+      #certifications-licenses .credential-link:hover {
+          text-decoration: underline;
+      }
+              /* Volunteering Section Styling */
+              #volunteering {
+                text-align: center; /* Center the main heading */
+            }
+            #volunteering h1 {
+                margin-bottom: 30px;
+            }
+            #volunteering .volunteering-entry {
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #eee; /* Optional separator */
+                text-align: left;           /* Align details to the left */
+            }
+            #volunteering .role {
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            #volunteering .organization {
+                font-style: italic;
+                margin-bottom: 5px;
+            }
+            #volunteering .dates {
+                font-size: 0.9em;
+                color: #888;
+                margin-bottom: 10px;
+            }
+            #volunteering ul { /* Style for the list of activities */
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            #volunteering li {
+                margin-bottom: 8px;
+                position: relative;
+                padding-left: 25px;
+            }
+            #volunteering li::before {
+                content: "\2022"; /* Disc bullet point */
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.2em;
+                color: #444;
+            }
+      
+</style>
+</head>
+
+<body>
+<div id="particles-js">
+  
+<div class="header">
+<h1>
+<span class="site-title">Venkatesh S</span>
+<span class="site-description">Machine Learning Engineer at ScriptChain Health</span>
+</h1>
+<div class="header-icons">
+<a aria-label="My LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/svenkatesh-js/">
+<i class="icon fa fa-linkedin" aria-hidden="true"></i>
+</a>
+<a aria-label="My Github Profile" target="_blank" href="https://github.com/Venkat-Git98">  <!-- Replace with your GitHub username -->
+<i class="icon fa fa-github-alt" aria-hidden="true"></i>
+</a>
+<a aria-label="Send Email" href="mailto:svenkatesh.js@gmail.com" target="_blank">  <!-- Replace with your email address -->
+<i class="icon fa fa-envelope"></i>
+</a>
+</div>
+<div class="header-links">
+<a class="link" href="#about" data-scroll>About Me</a>
+
+</div>
+</div>
+<a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+
+</div>
+
+<!-- About Section -->
+  <!-- About Section -->
+  <section id="about">
+    <div class="user-details">
+      <h1>About Me</h1>
+      <picture>
+        <source type="image/webp" srcset="./assets/img/webp/venkat.jpeg" alt="Venkatesh S" width="20%" style="border-radius: 50%">
+        <img src="./assets/img/jpg/your-professional-photo.jpg" alt="Venkatesh S" width="20%" style="border-radius: 50%">
+      </picture>
+      <p>
+        Hi, I’m <b>Venkatesh S</b>, a driven professional with a strong academic background and hands-on experience in artificial intelligence, machine learning, and data-driven solutions. Currently pursuing my <b>Master of Science in Computer Science</b> at <b>The George Washington University</b> (2023-2025), I am specializing in areas like deep learning, machine learning, and data analysis, where I am honing my skills to tackle complex, real-world challenges.
+    </p>
+    <p>
+        I am currently working as a <b>Machine Learning Engineer Intern</b> at <b>ScriptChain Health</b>, where I design and deploy predictive AI models to enhance patient care outcomes. My work focuses on building advanced models for patient readmission prediction, leveraging temporal data and large language models, implementing privacy-centric federated learning pipelines, and utilizing AWS cloud technologies for scalable AI solutions. This role allows me to directly contribute to transformative advancements in healthcare technology.
+    </p>
+    <p>
+        Previously, I served as a <b>Data Consultant</b> at <b>GW’s Academic Commons</b>, where I supported students and faculty with advanced statistical and data analysis projects, utilizing tools like Python, R, and MySQL. I also conducted workshops to empower the academic community with technical skills and foster interdisciplinary collaboration.
+    </p>
+    <p>
+        My academic journey began with a <b>Bachelor of Technology in Computer Science</b> from <b>SRM Institute of Science and Technology, Chennai</b> (2016-2020), where I built a strong foundation in computer science and machine learning. I further enhanced my expertise with an <b>Executive Diploma in Artificial Intelligence</b> from <b>Loyola Institute of Business Administration</b> (2020-2022), focusing on practical applications of AI, machine learning, and deep learning.
+    </p>
+    <p>
+        I am passionate about leveraging AI and data science to create intelligent, scalable systems that address real-world problems. Combining academic rigor with industry experience, I aim to contribute to innovative projects that drive meaningful impact across industries.
+    </p>
+    </div>
+
+    <!-- Skills Section (You can customize this further) -->
+
+    <section id="skills">  <!-- Give the skills section an ID -->
+      <div class="user">
+          <h2></h2>
+
+          <div class="skill-section">
+              <h3>Languages</h3>
+              <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
+              <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" alt="PySpark">
+              <img src="https://img.shields.io/badge/LangChain-121D33?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain">
+              <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
+          </div>
+
+
+          <div class="skill-section">
+            <h3>Cloud</h3>
+            <img src="https://img.shields.io/badge/DOCKER-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+            <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
+            <img src="https://img.shields.io/badge/GCP-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCP">
+            <img src="https://img.shields.io/badge/GIT-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+        </div>
+
+          <div class="skill-section">
+              <h3>Data Tools</h3>
+              <img src="https://img.shields.io/badge/sql-%2307405e.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
+              <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" alt="DuckDB">
+              <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white" alt="Tableau">
+              <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow">
+
+           </div>
+
+
+
+          <!-- <div class="skill-section">
+              <h3>Other Tools</h3>
+              <img src="https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium">
+              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+              <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
+
+          </div> -->
+
+
+      </div>
+  </section>
+  </section>
+
+<!-- User Introduction-->
+ <div class="user-details">
+
+  <section id="experience">
+    <h1>Experience</h1>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/scriptchain.png" alt="ScriptChain Health Logo">
+        <div class="details">
+            <div class="job-title">Machine Learning Engineer</div>
+            <div class="info">
+                <div class="company-name">ScriptChain Health</div>
+                <div class="dates">May 2024 - Present</div>
+                <div class="location">United States</div>
+            </div>
+            <ul>
+                <li><b>Achieved impactful results:</b> Developed and deployed AI models to predict heart disease readmissions, achieving over 78% accuracy through cutting-edge neural networks and temporal dependency analysis.</li>
+                <li><b>Personalized healthcare solutions:</b> Designed a Graph RAG system using Vertex AI’s Gemini to generate personalized diet and exercise recommendations, enhancing patient engagement and outcomes.</li>
+                <li><b>Privacy-first AI development:</b> Engineered federated learning pipelines to securely process sensitive health data, ensuring privacy compliance while achieving 95% data processing accuracy.</li>
+                <li><b>End-to-end AI implementation:</b> Spearheaded all phases of machine learning workflows, including data preprocessing, model training, and scalable deployment using AWS Bedrock and Athena.</li>
+                <li><b>Collaborative innovation:</b> Partnered with cross-functional teams to integrate AI solutions into healthcare systems, driving real-world impact by reducing patient readmissions and improving care delivery.</li>
+                <li><b>Research-driven innovation:</b> Applied methodologies from leading-edge research to enhance model performance, specifically in handling temporal data and advancing predictive analytics.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/gwu.png" alt="The George Washington University Logo">
+       <div class="details">
+            <div class="job-title">Data Consultant</div>
+            <div class="info">
+                <div class="company-name">The George Washington University</div>
+                <div class="dates">Aug 2024 - Present</div>
+                <div class="location">United States (On-site)</div>
+            </div>
+            <ul>
+              <li><b>Advanced statistical support:</b> Provide one-on-one consultation to students, faculty, and staff, leveraging tools such as R, Python, STATA, SAS, and SPSS to enhance research quality and technical proficiency.</li>
+              <li><b>Skill-building workshops:</b> Lead and assist in workshops focused on statistical analysis and data handling, delivering clear and actionable examples to demystify complex concepts for diverse academic audiences.</li>
+              <!-- <li><b>Comprehensive software expertise:</b> Stay updated on GIS software, MATLAB, Tableau, and other platforms to provide well-rounded support across various academic and research needs.</li> -->
+              <li><b>Fostering critical thinking:</b> Mentor learners in developing technical and analytical skills, enabling them to apply statistical methods effectively to real-world problems and academic projects.</li>
+              <li><b>Team collaboration for success:</b> Collaborate with a team of skilled data consultants to ensure high-quality support services, promoting academic success within the GW community.</li>
+              <li><b>Impact in education:</b> Contribute to the growth of the academic community by bridging technical knowledge with practical application, empowering users to achieve their research and academic goals.</li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/tcs.png" alt="Tata Consultancy Services Logo">
+        <div class="details">
+             <div class="job-title">Digital Transformation Developer</div>
+             <div class="info">
+                 <div class="company-name">Tata Consultancy Services</div>
+                 <div class="dates">Apr 2021 - Aug 2023</div>
+                 <div class="location">Chennai, Tamil Nadu, India (On-site)</div>
+             </div>
+             <ul>
+              <li><b>Optimized operations with RPA:</b> Reduced infrastructure requirements by 40% by engineering and deploying innovative Robotic Process Automation (RPA) solutions that streamlined business processes across multiple projects.</li>
+              <li><b>Enhanced efficiency with AI integration:</b> Integrated RPA with AI-driven technologies to automate repetitive tasks, significantly improving productivity and reducing manual intervention in workflows.</li>
+              <li><b>Cross-functional collaboration:</b> Partnered with diverse teams to design and launch scalable automation solutions, driving operational efficiency and delivering measurable results in business applications.</li>
+              <li><b>Strategic problem-solving:</b> Leveraged expertise in process automation and digital transformation to identify bottlenecks and implement solutions that improved efficiency across enterprise systems.</li>
+              <li><b>Impactful innovation:</b> Spearheaded digital transformation initiatives, applying cutting-edge technologies to modernize workflows and deliver value to business stakeholders.</li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="experience-entry">
+        <img class="company-logo" src="./assets/img/jpg/tcs_ion.png" alt="TCS iON Logo">
+        <div class="details">
+            <div class="job-title">Developer</div>
+            <div class="info">
+                 <div class="company-name">TCS iON - Infogro Technolog</div>
+                <div class="dates">May 2018 - Jun 2018</div>
+                <div class="location">Chennai, Tamil Nadu, India</div>
+           </div>
+           <ul>
+            <li><b>Data-driven learning insights:</b> Designed and implemented a digital analytics platform to monitor and analyze student performance, enhancing learning outcomes across institutions.</li>
+            <li><b>Advanced analytics integration:</b> Leveraged Python, Tableau, and SQL to build robust dashboards that provided actionable insights into student engagement and academic performance.</li>
+            <!-- <li><b>Scalable solution delivery:</b> Engineered scalable data pipelines using AWS services, ensuring real-time processing of large datasets from multiple educational institutions.</li> -->
+            <li><b>Impactful results:</b> Improved institutional decision-making by delivering a 30% increase in engagement tracking efficiency and enabling proactive academic interventions.</li>
+            <li><b>Collaboration for innovation:</b> Worked with cross-functional teams to integrate the analytics platform with existing learning management systems, ensuring seamless user experience and adoption.</li>
+        </ul>
+        </div>
+   </div>
+
+</section>
+<section id="projects">
+  <h1>Projects</h1>
+
+  <div class="project-entry">   <!-- No image container anymore -->
+      <div class="project-details">
+          <div class="project-title">Building Code Compliance: Navigating Complexity with AI</div>
+          <div class="project-dates">Nov 2024 - Present</div>
+          <div class="project-description">
+            <ul>
+              <li><b>Objective:</b> Developed a sophisticated Retrieval-Augmented Generation (RAG) system to efficiently handle technical queries, focusing on the relationship between intricate technical details.</li>
+              <li><b>Data Management:</b>
+                  <ul>
+                      <li>Utilized Pinecone as the vector database for efficient embedding storage and retrieval.</li>
+                      <li>Experimented with Google BigBird for embeddings and adopted OpenAI Text Embedding Large through a data-driven selection approach.</li>
+                      <li>Emphasized text relationships using custom prompts to enhance embedding relevance.</li>
+                  </ul>
+              </li>
+              <li><b>Query Optimization:</b>
+                  <ul>
+                      <li>Engineered GPT-4o to augment user queries, focusing on technical terms, and utilized augmented queries to fetch the most relevant chunk IDs.</li>
+                      <li>Implemented robust reference handling for technical document chunks.</li>
+                  </ul>
+              </li>
+              <li><b>Data Processing:</b>
+                  <ul>
+                      <li>Performed advanced text cleaning using specialized libraries for high-quality input data.</li>
+                      <li>Automated data scraping from the ICC Council website using Selenium.</li>
+                      <li>Applied a hybrid approach for document chunking, combining hierarchy-based semantic chunking and rolling window techniques to generate efficient chunks with associated metadata.</li>
+                  </ul>
+              </li>
+              <li><b>Application:</b>
+                  <ul>
+                      <li>Deployed the RAG system as an interactive Streamlit application for user-friendly access.</li>
+                      <li>Used GPT-4o for generating precise answers to user queries based on the most relevant document chunks.</li>
+                      <li>Applied prompt engineering to optimize LLM outputs, ensuring focus on critical technical details.</li>
+                  </ul>
+              </li>
+              <li><b>Achievements:</b> Delivered a highly efficient and accurate technical query answering system by integrating cutting-edge AI technologies and data handling techniques.</li>
+          </ul>
+          
+          </div>
+          <a class="project-link" href="https://github.com/Venkat-Git98/RAG_Building_Codes_Virginia" target="_blank"></a> </div>
+  </div>
+
+
+
+  <div class="project-entry"> <!-- No image container -->
+    <div class="project-details">
+        <div class="project-title">AI Text Discriminator</div>
+        <div class="project-dates">Mar 2024 - Apr 2024</div>
+        <div class="project-description">
+          <ul>
+            <li><b>Objective:</b> Designed and implemented a robust AI-based text classification system to differentiate between AI-generated and human-written text.</li>
+            <li><b>Approach:</b> Fine-tuned RoBERTa and GPT-2 models on a custom dataset of 50,000 text samples generated using GPT-3.</li>
+            <li><b>Modeling Technique:</b> Created an ensemble model combining RoBERTa and GPT-2 to enhance classification accuracy.</li>
+            <li><b>Achievements:</b>
+                <ul>
+                    <li>Achieved an impressive <b>97% classification accuracy</b>.</li>
+                    <li>Leveraged advanced NLP techniques and a massive training corpus to improve predictive analytics.</li>
+                </ul>
+            </li>
+        </ul>
+        
+          <!-- </div>
+           <a class="project-link" href="#" target="_blank">Project Link (Replace with actual link)</a> </div> -->
+  </div>
+  <section id="publications">
+    <h1>Publications</h1>
+
+    <div class="publication-entry">
+      <div class="publication-content"> 
+        <div class="publication-title">An end-to-end unified framework for assessing Turning Movements based Deep Neural Network</div>
+        <div class="publication-details">International Journal of Advanced Science and Technology, March 30, 2020</div>
+        <!-- <p>Road traffic is a major issue in cities with increasing population... (Shortened description - Add more if needed)</p> -->
+        <li><b>Methodology:</b>
+        <ul>
+          <li>Leveraged <b>Artificial Neural Networks (ANNs)</b> combined with <b>Kalman Filters</b> to dynamically predict TM counts while accounting for external factors such as climate, road conditions, and natural events.</li>
+          <li>Utilized <b>Convolutional Neural Networks (CNNs)</b> for vehicle type classification and traffic count estimation, addressing challenges like dense traffic and occlusions.</li>
+          <li>Integrated modular datasets, including traffic patterns, climate variance, and geospatial information, for accurate and holistic analysis.</li>
+      </ul>
+  </li>
+  <li><b>Innovations:</b>
+      <ul>
+          <li>Proposed a hybrid approach combining trajectory reconstruction and hierarchical path labeling to handle data ambiguities and improve prediction accuracy.</li>
+          <li>Incorporated advanced algorithms to optimize traffic signal timing and road designs based on TM counts.</li>
+      </ul>
+  </li>
+  <li><b>Achievements:</b>
+      <ul>
+          <li>Enhanced accuracy of TM count estimation, providing valuable insights for traffic forecasting, congestion analysis, and intersection improvement.</li>
+          <li>Presented a scalable, cost-effective solution that integrates sensor data and deep learning models for real-time traffic management.</li>
+      </ul>
+  </li>
+  <li><b>Future Scope:</b> Suggested further enhancements, including integrating real-time sensors and extending the model to autonomous traffic management systems.</li>
+</ul> </div>
+        <a class="publication-link" href="http://sersc.org/journals/index.php/IJAST/article/view/9778" target="_blank"></a>
+        
+    </div>
+
+    <div class="publication-entry"><div class="publication-content"> 
+        <div class="publication-title">Enhanced Learning with Augmented Reality and Virtual Reality</div>
+        <div class="publication-details">International Journal of Engineering and Advanced Technology (IJEAT), April 1, 2019</div>
+        <ul>
+        <li><b>Objective:</b> Developed an innovative system integrating Augmented Reality (AR) and Virtual Reality (VR) to enhance learning experiences and make education more interactive and engaging for students.</li>
+          <li><b>Key Contributions:</b>
+              <ul>
+                  <li>Designed an AR-based application allowing students to visualize and interact with 3D models of human anatomy, such as the heart and skull, for a better understanding of abstract concepts.</li>
+                  <li>Incorporated VR technology to provide a 360-degree immersive experience, enabling detailed exploration of human organs with sound support for enhanced realism.</li>
+                  <li>Created an architecture leveraging AR cameras, trained image datasets, and 3D model databases for real-time visualization and learning.</li>
+              </ul>
+          </li>
+          <li><b>Innovations:</b>
+              <ul>
+                  <li>Interactive 3D models improved students' comprehension and interest in learning compared to traditional methods like textbooks and 2D diagrams.</li>
+                  <!-- <li>Integrated sound effects, such as heartbeats, to create a multisensory learning environment.</li> -->
+                  <li>Addressed challenges in visualizing complex concepts through innovative AR and VR solutions.</li>
+              </ul>
+          </li>
+          <li><b>Applications:</b> 
+              <ul>
+                  <li>Revolutionized education in fields like medicine, biology, and anatomy by providing hands-on virtual experiences.</li>
+                  <li>Enabled students and educators to explore intricate details of organs, enhancing both teaching and learning processes.</li>
+              </ul>
+          </li>
+          <li><b>Limitations:</b>
+              <ul>
+                  <li>AR camera requires pre-trained image datasets; untrained images cannot be scanned or processed.</li>
+                  <li>Textual information accompanying 3D models is limited, requiring supplementary resources for in-depth learning.</li>
+                  <li>High device performance requirements may limit usage on low-end devices.</li>
+              </ul>
+          </li>
+          <li><b>Conclusion:</b> While the app has certain limitations, it significantly enhances the learning experience by making education more interactive, immersive, and effective through the integration of AR and VR technologies.</li>
+      </ul>
+    </div>
+    <a class="publication-link" href="https://www.ijeat.org/wp-content/uploads/papers/v8i4/D6347048419.pdf" target="_blank"></a>
+       
+    </div>
+
+    <div class="publication-entry"><div class="publication-content"> 
+        <div class="publication-title">HEART BEAT MONITORING SYSTEM AND ALERTING INDICATOR FOR DRIVER’S SAFETY</div>
+        <div class="publication-details">International Journal for Science and Advance Research in Technology (IJSART), October 26, 2018</div>
+        <ul>
+          <li><b>Objective:</b> Proposed a heart rate monitoring system for drivers to predict and prevent accidents caused by heart conditions such as arrhythmia, ensuring enhanced safety during driving.</li>
+          <li><b>Key Contributions:</b>
+              <ul>
+                  <li>Designed a system utilizing an IR pulse sensor and Arduino Uno to continuously monitor the driver’s heart rate during trips.</li>
+                  <li>Integrated a buzzer and LED alert system to notify drivers when their pulse rate exceeds or falls below a predefined threshold.</li>
+                  <li>Added a GSM module to send emergency alerts to pre-registered contacts, including family members and doctors, during critical situations.</li>
+                  <li>Developed an automatic braking system to slow down or halt the vehicle in emergencies, reducing potential risks.</li>
+              </ul>
+          </li>
+          <li><b>Methodology:</b>
+              <ul>
+                  <li>Implemented Photoplethysmography (PPG) to measure heartbeats by detecting changes in blood density using an IR sensor.</li>
+                  <li>Calculated Beats Per Minute (BPM) using Arduino, displaying results on an LCD and initiating alerts when thresholds are breached.</li>
+                  <li>Configured the Arduino IDE to monitor heart rate data in real-time and display outputs through the Serial Monitor.</li>
+              </ul>
+          </li>
+          <li><b>Innovations:</b>
+              <ul>
+                  <li>Developed a compact, open-source system that can be easily installed on steering wheels or vehicle cabins for continuous driver monitoring.</li>
+                  <li>Enabled customization of heart rate thresholds, allowing personalized safety settings for different individuals.</li>
+                  <li>Integrated automatic braking systems with the heart rate monitor to ensure immediate action in case of emergencies.</li>
+              </ul>
+          </li>
+          <li><b>Applications:</b>
+              <ul>
+                  <li>Improved road safety by predicting and preventing accidents caused by medical emergencies such as heart arrhythmia.</li>
+                  <li>Enhanced vehicle intelligence by integrating driver state monitoring with automatic vehicle response systems.</li>
+                  <li>Provided real-time alerts and notifications to ensure timely medical attention for drivers during critical conditions.</li>
+              </ul>
+          </li>
+          <li><b>Results:</b>
+              <ul>
+                  <li>Demonstrated the system’s capability to differentiate normal and abnormal heart rates, triggering alerts and activating braking mechanisms effectively.</li>
+                  <li>Showcased a functional prototype with accurate BPM measurements and real-time emergency notifications.</li>
+              </ul>
+          </li>
+          <li><b>Conclusion:</b> This system provides a practical solution for enhancing driver and passenger safety by monitoring heart rate in real-time, predicting potential medical emergencies, and ensuring timely responses. It paves the way for intelligent vehicle systems with integrated health monitoring capabilities.</li>
+      </ul>
+    </div>
+    <a class="publication-link" href="https://ijsart.com/public/storage/paper/pdf/IJSARTV4I1027787.pdf" target="_blank"></a>
+        
+    </div>
+
+    <div class="publication-entry"><div class="publication-content"> 
+        <div class="publication-title">Route Planning for Ships During Emergency Using Genetic Algorithm</div>
+        <div class="publication-details">International Journal of Emerging Technologies in Engineering Research (IJETER), October 21, 2018</div>
+        <ul>
+          <li><b>Objective:</b> Proposed a simulation-based system using Genetic Algorithms (GA) for efficient and optimal route planning for ships during emergency situations such as low fuel or ship damage.</li>
+          <li><b>Key Contributions:</b>
+              <ul>
+                  <li>Designed a system that leverages GA to identify optimal or near-optimal routes in critical conditions, addressing technical constraints and environmental factors.</li>
+                  <li>Utilized ARPA (Automatic Radar Plotting Aids) data to plot obstacles and simulate safe navigation paths without actual ship movement.</li>
+                  <li>Modified GA’s fitness function to prioritize emergency constraints, ensuring efficient pathfinding while minimizing risks and resource wastage.</li>
+              </ul>
+          </li>
+          <li><b>Methodology:</b>
+              <ul>
+                  <li>Developed simulations in the Processing Programming Language to map obstacles and compute optimal routes using evolutionary GA methods.</li>
+                  <li>Implemented key GA operations such as population initialization, selection, crossover, and mutation to iteratively improve navigation paths.</li>
+                  <li>Integrated fitness functions to evaluate species (routes) based on their proximity to the destination, ensuring effective pathfinding during emergencies.</li>
+              </ul>
+          </li>
+          <li><b>Innovations:</b>
+              <ul>
+                  <li>Proposed a dynamic GA model adaptable to varying constraints, such as limited fuel or damaged ship conditions.</li>
+                  <li>Optimized mutation rates and lifetime parameters to balance simulation efficiency and accuracy during emergency scenarios.</li>
+                  <li>Provided a scalable framework to evaluate complex grids with numerous obstacles and potential paths.</li>
+              </ul>
+          </li>
+          <li><b>Applications:</b>
+              <ul>
+                  <li>Improved ship navigation systems by providing optimal pathfinding solutions during emergencies, reducing collision risks and resource usage.</li>
+                  <li>Enabled navigators to simulate and pre-plan routes in real-time, enhancing safety and operational efficiency.</li>
+              </ul>
+          </li>
+          <li><b>Results:</b>
+              <ul>
+                  <li>Demonstrated the effectiveness of GA-based simulations in identifying optimal routes within specified constraints.</li>
+                  <li>Highlighted the impact of mutation rates and lifetime settings on simulation performance, showcasing adaptability in emergency scenarios.</li>
+              </ul>
+          </li>
+          <li><b>Conclusion:</b> This research validates the use of Genetic Algorithms for emergency route planning in maritime navigation. By integrating ARPA data and simulation-based models, the system provides a robust and efficient framework for safe and resource-conscious ship navigation during critical situations.</li>
+      </ul>
+    </div>
+    <a class="publication-link" href="https://www.ijeter.everscience.org/Manuscripts/Volume-6/Issue-10/Vol-6-issue-10-M-10.pdf" target="_blank"></a>
+        
+    </div>
+
+    <section id="certifications-licenses">
+      <h1>Certifications & Licenses</h1>
+
+
+      <div class="certification-entry">
+          <div class="certification-title">Tableau Desktop Certified Professional Certification</div>
+          <div class="issuer">Tableau</div>
+          <div class="date">Issued Apr 2022 &middot; Expires Apr 2025</div>
+          <div>Credential ID: TAB1056IND</div>  </div>
+
+      <div class="certification-entry">
+          <div class="certification-title">Programming in Python</div>
+          <div class="issuer">Meta</div>
+          <div class="date">Issued Aug 2022</div> </div>
+
+
+<!-- 
+      <h2>Licenses (Optional - Add if you have any)</h2>  <div class="license-entry">
+          <div class="license-title">Example License Title</div>
+          <div class="license-issuer">Issuing Authority</div>
+          <div class="license-date">Issue/Expiry Date</div>
+          <div> <a class="credential-link" href="#" target="_blank">License Link (Optional)</a> </div>
+      </div> -->
+      <section id="volunteering">
+        <h1>Volunteering</h1>
+
+        <div class="volunteering-entry">
+            <div class="role">Core Team</div>
+            <div class="organization">TEXUS</div>
+            <div class="dates">Jan 2020 - Mar 2020</div>
+            <!-- <p>A National Level Techfest which included 50+ Technical & Non-Technical Events, Hackathon, and more.  Engaged 7000+ students from 10+ national-level colleges/universities across Tamil Nadu. Organized Vh1 Supersonic Musical Night.</p> -->
+            <p><b>Website:</b> <a href="https://texus.io" target="_blank">https://texus.io</a></p>
+            <ul>
+              <li>Organized and managed a national-level tech fest with <b>50+ technical and non-technical events</b>, engaging <b>7,000+ participants</b> from <b>10+ colleges/universities</b> across Tamil Nadu.</li>
+              <li>Led a team to design and implement a <b>creative theme</b> for the event, ensuring consistent branding and visual appeal.</li>
+              <li>Collaborated with the core team to plan, execute, and resolve event-related challenges, including the successful organization of the <b>Vh1 Supersonic Musical Night</b>.</li>
+          </ul>
+        </div>
+
+        <div class="volunteering-entry">
+            <div class="role">Event Coordinator</div>
+            <div class="organization">TEXUS</div>
+            <div class="dates">Mar 2018</div>
+            <p><b>Website:</b> <a href="https://texus.io" target="_blank">https://texus.io</a></p>
+            <ul>
+                <li>Organized an event titled <b>"Running Machine"</b>, which encouraged students to develop Remote Controlled (RC) vehicles and showcase their engineering skills.</li>
+                <li>Collaborated with the <b>Cyborg Club</b> at SRMIST to design RC cars and develop a custom track for the competition.</li>
+                <li>Contributed to a tech fest that featured <b>50+ events</b>, a hackathon, and engaged <b>7,000+ participants</b> from <b>10+ esteemed colleges/universities</b> across Tamil Nadu.</li>
+            </ul>
+        </div>
+
+        <div class="volunteering-entry">
+            <div class="role">CYBORG - Organizing Lead</div>
+            <div class="organization">SRM University</div>
+            <div class="dates">Mar 2018</div>
+            <ul>
+              <li>Organized a robotics workshop conducted by the <b>Cyborg Club</b> of the CSE Department at SRMIST.</li>
+              <li>Hosted a session led by <b>Mr. Tony Maciejewski</b>, Professor and Head of the ECE Department at Colorado State University.</li>
+              <li>The workshop inspired students across various departments to explore multi-disciplinary approaches and expand their understanding of robotics and its future potential.</li>
+          </ul>
+
+            </div>
+    </section>
+  </section>
+  </section>
+
+
+<footer class="footer">
+<p>&copy; Venkatesh S, 2025</p> </footer>
+    <!-- Import JS: Particles Theme -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Import JS: Sweet Scroll -->
+    <script src="./assets/js/sweet-scroll.min.js"></script>
+    <!-- Import JS: Main Script -->
+    <script src="./assets/js/main.js"></script>  </body>
+</html>
+
+</body>
+</html>
