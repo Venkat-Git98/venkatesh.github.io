@@ -1,848 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Metadata of the Webpage -->
-<!-- Character-set Metadata -->
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<!-- Viewport Metadata -->
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Description Metadata-->
-<meta name="description" content="Portfolio Website of Venkatesh S, Machine Learning Engineer" />
-<!-- Author Metadata -->
-<meta name="author" content="Venkatesh S" />
-<!-- Keyword Metadata -->
-<meta name="keywords" content="Venkatesh S, Machine Learning Engineer, AI, Healthcare, ScriptChain Health, The George Washington University, Data Science"
-/>
-<!-- Webpage Logo -->
-<link rel="shortcut icon" href="./assets/img/favicon.ico" />
-<!-- Webpage Title -->
-<title>Venkatesh S</title>
-
-<!-- Import CSS: Main Stylesheet -->
-<link rel="stylesheet" href="./assets/css/main.css" />
-<style>
-  /* Skill section styling */
-    /* Skill section styling */
-    .skill-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px; /* Reduced gap */
-      margin-bottom: 20px;
-      padding: 0 5%; /* Reduced padding */
-  }
-
-  .skill-section h3 {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 1.em; /* Smaller font size */
-  }
-
-  .skill-section img {
-      flex: 0 0 calc(35% - 10px); /* Smaller width */
-      max-width: 100px; /* Much smaller max-width */
-      height: auto;
-      margin: 0;
-  }
-
-  /* Add container width constraint */
-  .user {
-      max-width: 800px;
-      margin: 0 auto;
-  }
-  /* Experience section styling */
-/* Experience section styling */
-    /* Experience section styling */
-    #experience {
-      text-align: left;
-      margin: 0 auto;
-      max-width: 90%;
-      padding: 0 20px;
-  }
-  
-  #experience h1 {
-      text-align: center; /* Center the main heading */
-      margin-bottom: 30px;
-  }
-  
-  #experience .experience-entry {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-  }
-  
-  #experience .company-logo {
-      width: 100px;
-      height: auto;
-      object-fit: contain;
-      margin-right: 20px;
-  }
-  
-  #experience .details {
-      flex: 1; /* Let details take up remaining space */
-  }
-  
-  #experience .job-title {
-      font-weight: bold;
-      margin-bottom: 5px;
-  }
-  
-  #experience .info {
-      font-size: 0.9em;
-      color: #888;
-      margin-bottom: 10px;
-  }
-  
-  #experience ul {
-      margin-top: 5px;
-  }
-  
-  #experience li {
-      margin-bottom: 8px;
-      position: relative;
-  }
-  
-  
-  /* Media Query for smaller screens (optional, for a different layout on mobile) */
-  @media (max-width: 600px) { /* Adjust breakpoint as needed */
-      #experience .experience-entry {
-          flex-direction: column; /* Stack logo and details vertically */
-          align-items: center; /* Center the content horizontally */
-      }
-      #experience .company-logo {
-          margin-right: 0;
-          margin-bottom: 15px; /* Add space below the logo */
-      }
-  }
-
-/* Projects Section Styling */
-/* Projects Section Styling */
-#projects {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 75%;
-  padding: 0 20px;
-}
-
-#projects h1 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-#projects .project-entry {
-  display: flex;
-  flex-direction: column; /* Mobile-first: Stack vertically */
-  align-items: flex-start;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-#projects .project-image {
-  width: 100%;       /* Make image responsive */
-  max-width: 200px;  /* Limit max width */
-  height: auto;
-  margin-right: 20px; /* Spacing for larger screens */
-  margin-bottom: 10px; /* Spacing for smaller screens */
-}
-
-@media (min-width: 769px) { /* Larger screens: Side-by-side */
-  #projects .project-entry {
-      flex-direction: row;
-  }
-  #projects .project-image {
-      margin-bottom: 0;  /* Remove bottom margin on larger screens */
-  }
-}
-
-#projects .project-details {
-  flex: 1; /* Allow details to take up remaining space */
-}
-
-#projects .project-title {
-  font-weight: bold;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-#projects .project-dates {
-  font-size: 0.9em;
-  color: #888;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-#projects .project-description {
-  text-align: left;
-}
-
-#projects .project-description ul {
-  margin-left: 0px; 
-  margin-top: 5px;
-}
-
-#projects .project-description > ul > li { /* Direct child list items */
-  margin-bottom: 8px;
-  position: relative; /* For positioning bullet points */
-}
-
-
-/* Nested lists (for subtitles) */
-#projects .project-description ul ul {
-  margin-top: 5px; 
-}
-
-#projects .project-link {
-  display: inline-block;
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-#projects .project-link:hover {
-  background-color: #0056b3;
-}
-
-/* Publications Section Styling */
-#publications {
-  text-align: center;
-}
-
-#publications h1 {
-  margin-bottom: 30px;
-}
-
-#publications .publication-entry {
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  text-align: left;
-  display: flex;          /* Use flexbox for alignment */
-  flex-direction: column;  /* Stack elements vertically */
-}
-
-
-#publications .publication-content { /* New container for text content */
-  order: 1;                /* Place content before the link */
-}
-
-#publications .publication-title {
-  font-style: italic;
-  margin-bottom: 5px;
-}
-
-#publications .publication-details {
-  font-size: 0.9em;
-  color: #888;
-  margin-bottom: 10px;
-}
-
-
-/* Style the publication link as a button */
-#publications .publication-link {
-  display: inline-block;
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  order: 2;              /* Place the link after the content */
-  align-self: center;
-  margin-top: 10px; 
-}
-
-#publications .publication-link:hover {
-  background-color: #0056b3;
-}
-
-
-/* Consistent sub-bullet styles */
-
-
-/* To keep consistent spacing, you may want to add margin to list items that DON'T have sub-lists*/
-#publications ul > li:not(:has(ul)) {
-  margin-bottom: 8px;
-}
-         /* Certifications & Licenses Section Styling */
-         #certifications-licenses {
-          text-align: center;
-      }
-      #certifications-licenses h1 {
-          margin-bottom: 30px;
-      }
-      #certifications-licenses .certification-entry,
-      #certifications-licenses .license-entry {
-          margin-bottom: 20px;
-          padding-bottom: 15px;
-          border-bottom: 1px solid #eee;
-          text-align: left; 
-      }
-      #certifications-licenses .certification-title,
-      #certifications-licenses .license-title {
-          font-weight: bold;
-          margin-bottom: 5px;
-      }
-      #certifications-licenses .issuer,
-      #certifications-licenses .license-issuer {
-          font-style: italic;
-          margin-bottom: 5px;
-      }
-      #certifications-licenses .date,
-      #certifications-licenses .license-date {
-          font-size: 0.9em;
-          color: #888;
-      }
-      /* Optional: Add styles for credential links if needed */
-      #certifications-licenses .credential-link {
-          color: #007bff;
-          text-decoration: none;
-      }
-      #certifications-licenses .credential-link:hover {
-          text-decoration: underline;
-      }
-              /* Volunteering Section Styling */
-              #volunteering {
-                text-align: center; /* Center the main heading */
-            }
-            #volunteering h1 {
-                margin-bottom: 30px;
-            }
-            #volunteering .volunteering-entry {
-                margin-bottom: 20px;
-                padding-bottom: 15px;
-                border-bottom: 1px solid #eee; /* Optional separator */
-                text-align: left;           /* Align details to the left */
-            }
-            #volunteering .role {
-                font-weight: bold;
-                margin-bottom: 5px;
-            }
-            #volunteering .organization {
-                font-style: italic;
-                margin-bottom: 5px;
-            }
-            #volunteering .dates {
-                font-size: 0.9em;
-                color: #888;
-                margin-bottom: 10px;
-            }
-            #volunteering ul { 
-                padding: 0;
-                margin: 0;
-            }
-            #volunteering li {
-                margin-bottom: 8px;
-                position: relative;
-            }
-      
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Venkatesh Shanmugam — Senior AI Engineer</title>
+  <meta name="description" content="Senior AI/ML Engineer with 5+ years building production ML systems. Agentic AI, knowledge graphs, healthcare ML." />
+  <meta name="author" content="Venkatesh Shanmugam" />
+  <meta property="og:title" content="Venkatesh Shanmugam — Senior AI Engineer" />
+  <meta property="og:description" content="Senior AI/ML Engineer. Agentic AI, knowledge graphs, production ML systems." />
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-
 <body>
-<div id="particles-js">
-  
-<div class="header">
-<h1>
-<span class="site-title">Venkatesh S</span>
-<span class="site-description">Machine Learning Engineer at ScriptChain Health</span>
-</h1>
-<div class="header-icons">
-<a aria-label="My LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/svenkatesh-js/">
-<i class="icon fa fa-linkedin" aria-hidden="true"></i>
-</a>
-<a aria-label="My Github Profile" target="_blank" href="https://github.com/Venkat-Git98">  <!-- Replace with your GitHub username -->
-<i class="icon fa fa-github-alt" aria-hidden="true"></i>
-</a>
-<a aria-label="Send Email" href="mailto:svenkatesh.js@gmail.com" target="_blank">  <!-- Replace with your email address -->
-<i class="icon fa fa-envelope"></i>
-</a>
-</div>
-<div class="header-links">
-<a class="link" href="#about" data-scroll>About Me</a>
 
-</div>
-</div>
-<a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scroll-progress"></div>
 
-</div>
-
-<!-- About Section -->
-  <!-- About Section -->
-  <section id="about">
-    <div class="user-details">
-      <h1>About Me</h1>
-      <picture>
-        <source type="image/webp" srcset="./assets/img/webp/venkat.jpeg" alt="Venkatesh S" width="20%" style="border-radius: 50%">
-        <img src="./assets/img/jpg/your-professional-photo.jpg" alt="Venkatesh S" width="20%" style="border-radius: 50%">
-      </picture>
-      <p>
-        Hi, I’m <b>Venkatesh S</b>, a driven professional with a strong academic background and hands-on experience in artificial intelligence, machine learning, and data-driven solutions. Currently pursuing my <b>Master of Science in Computer Science</b> at <b>The George Washington University</b> (2023-2025), I am specializing in areas like deep learning, machine learning, and data analysis, where I am honing my skills to tackle complex, real-world challenges.
-    </p>
-    <p>
-        I am currently working as a <b>Machine Learning Engineer Intern</b> at <b>ScriptChain Health</b>, where I design and deploy predictive AI models to enhance patient care outcomes. My work focuses on building advanced models for patient readmission prediction, leveraging temporal data and large language models, implementing privacy-centric federated learning pipelines, and utilizing AWS cloud technologies for scalable AI solutions. This role allows me to directly contribute to transformative advancements in healthcare technology.
-    </p>
-    <p>
-        Previously, I served as a <b>Data Consultant</b> at <b>GW’s Academic Commons</b>, where I supported students and faculty with advanced statistical and data analysis projects, utilizing tools like Python, R, and MySQL. I also conducted workshops to empower the academic community with technical skills and foster interdisciplinary collaboration.
-    </p>
-    <p>
-        My academic journey began with a <b>Bachelor of Technology in Computer Science</b> from <b>SRM Institute of Science and Technology, Chennai</b> (2016-2020), where I built a strong foundation in computer science and machine learning. I further enhanced my expertise with an <b>Executive Diploma in Artificial Intelligence</b> from <b>Loyola Institute of Business Administration</b> (2020-2022), focusing on practical applications of AI, machine learning, and deep learning.
-    </p>
-    <p>
-        I am passionate about leveraging AI and data science to create intelligent, scalable systems that address real-world problems. Combining academic rigor with industry experience, I aim to contribute to innovative projects that drive meaningful impact across industries.
-    </p>
+  <!-- ── NAV ── -->
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+  <nav class="nav">
+    <div class="container">
+      <a href="#" class="nav-logo">VS</a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <!-- Skills Section (You can customize this further) -->
+  <!-- ── BENTO DASHBOARD ── -->
+  <section class="dashboard" id="top">
+    <div class="container">
+      <div class="bento">
 
-    <section id="skills">  <!-- Give the skills section an ID -->
-      <div class="user">
-          <h2></h2>
-
-          <div class="skill-section">
-              <h3>Languages</h3>
-              <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python">
-              <img src="https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white" alt="PySpark">
-              <img src="https://img.shields.io/badge/LangChain-121D33?style=for-the-badge&logo=chainlink&logoColor=white" alt="LangChain">
-              <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
+        <!-- Identity -->
+        <div class="card bento-identity">
+          <div class="identity-header">
+            <div class="identity-meta">
+              <span class="status-badge"><span class="status-dot"></span> Open to opportunities</span>
+              <span class="location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                New York, NY &middot; EST
+              </span>
+            </div>
           </div>
-
-
-          <div class="skill-section">
-            <h3>Cloud</h3>
-            <img src="https://img.shields.io/badge/DOCKER-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-            <img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS">
-            <img src="https://img.shields.io/badge/GCP-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white" alt="GCP">
-            <img src="https://img.shields.io/badge/GIT-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+          <h1>Venkatesh Shanmugam</h1>
+          <p class="subtitle">Senior AI Engineer at <strong>Aithon AI</strong></p>
+          <p class="one-liner">I architect ML systems that turn complex data into automated business decisions — cutting costs, eliminating manual work, and shipping models that matter.</p>
+          <div class="ctas">
+            <a href="./Venkatesh_Shanmugam_Resume.pdf" target="_blank" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Resume
+            </a>
+            <a href="mailto:svenkatesh.js@gmail.com" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+            <a href="https://github.com/Venkat-Git98" target="_blank" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/svenkatesh-js/" target="_blank" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+          </div>
         </div>
 
-          <div class="skill-section">
-              <h3>Data Tools</h3>
-              <img src="https://img.shields.io/badge/sql-%2307405e.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL">
-              <img src="https://img.shields.io/badge/DuckDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black" alt="DuckDB">
-              <img src="https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white" alt="Tableau">
-              <img src="https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow">
+        <!-- Stats -->
+        <div class="card bento-stat">
+          <span class="stat-number" data-count="70" data-prefix="~" data-suffix="%">~0%</span>
+          <span class="stat-label">LLM Cost Cut</span>
+        </div>
+        <div class="card bento-stat">
+          <span class="stat-number" data-count="20" data-suffix="+">0+</span>
+          <span class="stat-label">hrs/wk Automated</span>
+        </div>
+        <div class="card bento-stat">
+          <span class="stat-number" data-count="500" data-suffix="M+">0M+</span>
+          <span class="stat-label">Records Processed</span>
+        </div>
+        <div class="card bento-stat">
+          <span class="stat-number" data-count="4">0</span>
+          <span class="stat-label">Published Papers</span>
+        </div>
 
-           </div>
+        <!-- Tech Stack -->
+        <div class="card bento-stack">
+          <h2>Core Stack</h2>
+          <div class="tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Docker</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Spark</span>
+          </div>
+        </div>
 
-
-
-          <!-- <div class="skill-section">
-              <h3>Other Tools</h3>
-              <img src="https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium">
-              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-              <img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" alt="PyTorch">
-
-          </div> -->
-
+        <!-- Featured Experience -->
+        <div class="card bento-highlight">
+          <span class="overline">Highlights</span>
+          <ul class="highlight-list">
+            <li>
+              <span class="m">Solo-architected</span> enterprise ML/AI platform on Databricks + Delta Lake at Aithon AI
+            </li>
+            <li>
+              <span class="m">78% ROC-AUC</span> hospital readmission model deployed in clinical trials at ScriptChain Health
+            </li>
+            <li>
+              Promoted to <span class="m">Senior AI Engineer</span> within 4 months
+            </li>
+          </ul>
+        </div>
 
       </div>
+    </div>
   </section>
-  </section>
 
-<!-- User Introduction-->
- <div class="user-details">
+  <!-- ── EXPERIENCE ── -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <p class="section-label reveal">Experience</p>
+      <h2 class="section-title reveal">Where I've Worked</h2>
+      <div class="exp-list">
 
-  <section id="experience">
-    <h1>Experience</h1>
-
-    <div class="experience-entry">
-        <img class="company-logo" src="./assets/img/jpg/scriptchain.png" alt="ScriptChain Health Logo">
-        <div class="details">
-            <div class="job-title">Machine Learning Engineer</div>
-            <div class="info">
-                <div class="company-name">ScriptChain Health</div>
-                <div class="dates">May 2024 - Present</div>
-                <div class="location">United States</div>
-            </div>
+        <div class="exp-item reveal">
+          <div class="exp-date">Oct 2025 — Present</div>
+          <div class="exp-content">
+            <h3>Senior AI Engineer <span class="now-badge"><span class="status-dot"></span> Now</span></h3>
+            <p class="exp-company"><strong>Aithon AI</strong> &middot; New York, NY</p>
             <ul>
-                <li><b>Achieved impactful results:</b> Developed and deployed AI models to predict heart disease readmissions, achieving over 78% accuracy through cutting-edge neural networks and temporal dependency analysis.</li>
-                <li><b>Personalized healthcare solutions:</b> Designed a Graph RAG system using Vertex AI’s Gemini to generate personalized diet and exercise recommendations, enhancing patient engagement and outcomes.</li>
-                <li><b>Privacy-first AI development:</b> Engineered federated learning pipelines to securely process sensitive health data, ensuring privacy compliance while achieving 95% data processing accuracy.</li>
-                <li><b>End-to-end AI implementation:</b> Spearheaded all phases of machine learning workflows, including data preprocessing, model training, and scalable deployment using AWS Bedrock and Athena.</li>
-                <li><b>Collaborative innovation:</b> Partnered with cross-functional teams to integrate AI solutions into healthcare systems, driving real-world impact by reducing patient readmissions and improving care delivery.</li>
-                <li><b>Research-driven innovation:</b> Applied methodologies from leading-edge research to enhance model performance, specifically in handling temporal data and advancing predictive analytics.</li>
+              <li>Cut LLM inference costs <span class="m">~70%</span> via 3-pass scoring pipeline with intelligent caching and selective re-ranking</li>
+              <li>Built graph ML reasoning engine (Neo4j + LangGraph) — eliminated <span class="m">20+ hrs/week</span> of manual analysis per team</li>
+              <li>Solo-architected full ML/AI layer on Databricks + Delta Lake across SEC filings, CRM, and market signals</li>
+              <li>Designed agentic ML pipelines with self-evolving cluster models for automated anomaly detection</li>
+              <li>Led LLM security testing on production chatbot. Promoted to Senior in <span class="m">4 months</span></li>
             </ul>
-        </div>
-    </div>
-
-    <div class="experience-entry">
-        <img class="company-logo" src="./assets/img/jpg/gwu.png" alt="The George Washington University Logo">
-       <div class="details">
-            <div class="job-title">Data Consultant</div>
-            <div class="info">
-                <div class="company-name">The George Washington University</div>
-                <div class="dates">Aug 2024 - Present</div>
-                <div class="location">United States (On-site)</div>
-            </div>
-            <ul>
-              <li><b>Advanced statistical support:</b> Provide one-on-one consultation to students, faculty, and staff, leveraging tools such as R, Python, STATA, SAS, and SPSS to enhance research quality and technical proficiency.</li>
-              <li><b>Skill-building workshops:</b> Lead and assist in workshops focused on statistical analysis and data handling, delivering clear and actionable examples to demystify complex concepts for diverse academic audiences.</li>
-              <!-- <li><b>Comprehensive software expertise:</b> Stay updated on GIS software, MATLAB, Tableau, and other platforms to provide well-rounded support across various academic and research needs.</li> -->
-              <li><b>Fostering critical thinking:</b> Mentor learners in developing technical and analytical skills, enabling them to apply statistical methods effectively to real-world problems and academic projects.</li>
-              <li><b>Team collaboration for success:</b> Collaborate with a team of skilled data consultants to ensure high-quality support services, promoting academic success within the GW community.</li>
-              <li><b>Impact in education:</b> Contribute to the growth of the academic community by bridging technical knowledge with practical application, empowering users to achieve their research and academic goals.</li>
-          </ul>
-        </div>
-    </div>
-
-    <div class="experience-entry">
-        <img class="company-logo" src="./assets/img/jpg/tcs.png" alt="Tata Consultancy Services Logo">
-        <div class="details">
-             <div class="job-title">Digital Transformation Developer</div>
-             <div class="info">
-                 <div class="company-name">Tata Consultancy Services</div>
-                 <div class="dates">Apr 2021 - Aug 2023</div>
-                 <div class="location">Chennai, Tamil Nadu, India (On-site)</div>
-             </div>
-             <ul>
-              <li><b>Optimized operations with RPA:</b> Reduced infrastructure requirements by 40% by engineering and deploying innovative Robotic Process Automation (RPA) solutions that streamlined business processes across multiple projects.</li>
-              <li><b>Enhanced efficiency with AI integration:</b> Integrated RPA with AI-driven technologies to automate repetitive tasks, significantly improving productivity and reducing manual intervention in workflows.</li>
-              <li><b>Cross-functional collaboration:</b> Partnered with diverse teams to design and launch scalable automation solutions, driving operational efficiency and delivering measurable results in business applications.</li>
-              <li><b>Strategic problem-solving:</b> Leveraged expertise in process automation and digital transformation to identify bottlenecks and implement solutions that improved efficiency across enterprise systems.</li>
-              <li><b>Impactful innovation:</b> Spearheaded digital transformation initiatives, applying cutting-edge technologies to modernize workflows and deliver value to business stakeholders.</li>
-          </ul>
-        </div>
-    </div>
-
-    <div class="experience-entry">
-        <img class="company-logo" src="./assets/img/jpg/tcs_ion.png" alt="TCS iON Logo">
-        <div class="details">
-            <div class="job-title">Developer</div>
-            <div class="info">
-                 <div class="company-name">TCS iON - Infogro Technolog</div>
-                <div class="dates">May 2018 - Jun 2018</div>
-                <div class="location">Chennai, Tamil Nadu, India</div>
-           </div>
-           <ul>
-            <li><b>Data-driven learning insights:</b> Designed and implemented a digital analytics platform to monitor and analyze student performance, enhancing learning outcomes across institutions.</li>
-            <li><b>Advanced analytics integration:</b> Leveraged Python, Tableau, and SQL to build robust dashboards that provided actionable insights into student engagement and academic performance.</li>
-            <!-- <li><b>Scalable solution delivery:</b> Engineered scalable data pipelines using AWS services, ensuring real-time processing of large datasets from multiple educational institutions.</li> -->
-            <li><b>Impactful results:</b> Improved institutional decision-making by delivering a 30% increase in engagement tracking efficiency and enabling proactive academic interventions.</li>
-            <li><b>Collaboration for innovation:</b> Worked with cross-functional teams to integrate the analytics platform with existing learning management systems, ensuring seamless user experience and adoption.</li>
-        </ul>
-        </div>
-   </div>
-
-</section>
-<section id="projects">
-  <h1>Projects</h1>
-
-  <div class="project-entry">   <!-- No image container anymore -->
-      <div class="project-details">
-          <div class="project-title">Building Code Compliance: Navigating Complexity with AI</div>
-          <div class="project-dates">Nov 2024 - Present</div>
-          <div class="project-description">
-            <ul>
-              <li><b>Objective:</b> Developed a sophisticated Retrieval-Augmented Generation (RAG) system to efficiently handle technical queries, focusing on the relationship between intricate technical details.</li>
-              <li><b>Data Management:</b>
-                  <ul>
-                      <li>Utilized Pinecone as the vector database for efficient embedding storage and retrieval.</li>
-                      <li>Experimented with Google BigBird for embeddings and adopted OpenAI Text Embedding Large through a data-driven selection approach.</li>
-                      <li>Emphasized text relationships using custom prompts to enhance embedding relevance.</li>
-                  </ul>
-              </li>
-              <li><b>Query Optimization:</b>
-                  <ul>
-                      <li>Engineered GPT-4o to augment user queries, focusing on technical terms, and utilized augmented queries to fetch the most relevant chunk IDs.</li>
-                      <li>Implemented robust reference handling for technical document chunks.</li>
-                  </ul>
-              </li>
-              <li><b>Data Processing:</b>
-                  <ul>
-                      <li>Performed advanced text cleaning using specialized libraries for high-quality input data.</li>
-                      <li>Automated data scraping from the ICC Council website using Selenium.</li>
-                      <li>Applied a hybrid approach for document chunking, combining hierarchy-based semantic chunking and rolling window techniques to generate efficient chunks with associated metadata.</li>
-                  </ul>
-              </li>
-              <li><b>Application:</b>
-                  <ul>
-                      <li>Deployed the RAG system as an interactive Streamlit application for user-friendly access.</li>
-                      <li>Used GPT-4o for generating precise answers to user queries based on the most relevant document chunks.</li>
-                      <li>Applied prompt engineering to optimize LLM outputs, ensuring focus on critical technical details.</li>
-                  </ul>
-              </li>
-              <li><b>Achievements:</b> Delivered a highly efficient and accurate technical query answering system by integrating cutting-edge AI technologies and data handling techniques.</li>
-          </ul>
-          
           </div>
-          <a class="project-link" href="https://github.com/Venkat-Git98/RAG_Building_Codes_Virginia" target="_blank">Link</a> </div>
-  </div>
-
-
-
-  <div class="project-entry"> <!-- No image container -->
-    <div class="project-details">
-        <div class="project-title">AI Text Discriminator</div>
-        <div class="project-dates">Mar 2024 - Apr 2024</div>
-        <div class="project-description">
-          <ul>
-            <li><b>Objective:</b> Designed and implemented a robust AI-based text classification system to differentiate between AI-generated and human-written text.</li>
-            <li><b>Approach:</b> Fine-tuned RoBERTa and GPT-2 models on a custom dataset of 50,000 text samples generated using GPT-3.</li>
-            <li><b>Modeling Technique:</b> Created an ensemble model combining RoBERTa and GPT-2 to enhance classification accuracy.</li>
-            <li><b>Achievements:</b>
-                <ul>
-                    <li>Achieved an impressive <b>97% classification accuracy</b>.</li>
-                    <li>Leveraged advanced NLP techniques and a massive training corpus to improve predictive analytics.</li>
-                </ul>
-            </li>
-        </ul>
-        
-          <!-- </div>
-           <a class="project-link" href="#" target="_blank">Project Link (Replace with actual link)</a> </div> -->
-  </div>
-  <section id="publications">
-    <h1>Publications</h1>
-
-    <div class="publication-entry">
-      <div class="publication-content"> 
-        <div class="publication-title">An end-to-end unified framework for assessing Turning Movements based Deep Neural Network</div>
-        <div class="publication-details">International Journal of Advanced Science and Technology, March 30, 2020</div>
-        <!-- <p>Road traffic is a major issue in cities with increasing population... (Shortened description - Add more if needed)</p> -->
-        <ul>
-        <li><b>Methodology:</b>
-        <ul>
-          <li>Leveraged <b>Artificial Neural Networks (ANNs)</b> combined with <b>Kalman Filters</b> to dynamically predict TM counts while accounting for external factors such as climate, road conditions, and natural events.</li>
-          <li>Utilized <b>Convolutional Neural Networks (CNNs)</b> for vehicle type classification and traffic count estimation, addressing challenges like dense traffic and occlusions.</li>
-          <li>Integrated modular datasets, including traffic patterns, climate variance, and geospatial information, for accurate and holistic analysis.</li>
-      </ul>
-  </li>
-  <li><b>Innovations:</b>
-      <ul>
-          <li>Proposed a hybrid approach combining trajectory reconstruction and hierarchical path labeling to handle data ambiguities and improve prediction accuracy.</li>
-          <li>Incorporated advanced algorithms to optimize traffic signal timing and road designs based on TM counts.</li>
-      </ul>
-  </li>
-  <li><b>Achievements:</b>
-      <ul>
-          <li>Enhanced accuracy of TM count estimation, providing valuable insights for traffic forecasting, congestion analysis, and intersection improvement.</li>
-          <li>Presented a scalable, cost-effective solution that integrates sensor data and deep learning models for real-time traffic management.</li>
-      </ul>
-  </li>
-  <li><b>Future Scope:</b> Suggested further enhancements, including integrating real-time sensors and extending the model to autonomous traffic management systems.</li>
-</ul>
- </div>
-        <a class="publication-link" href="http://sersc.org/journals/index.php/IJAST/article/view/9778" target="_blank">Link</a>
-        
-    </div>
-
-    <div class="publication-entry"><div class="publication-content"> 
-        <div class="publication-title">Enhanced Learning with Augmented Reality and Virtual Reality</div>
-        <div class="publication-details">International Journal of Engineering and Advanced Technology (IJEAT), April 1, 2019</div>
-        <ul>
-        <li><b>Objective:</b> Developed an innovative system integrating Augmented Reality (AR) and Virtual Reality (VR) to enhance learning experiences and make education more interactive and engaging for students.</li>
-          <li><b>Key Contributions:</b>
-              <ul>
-                  <li>Designed an AR-based application allowing students to visualize and interact with 3D models of human anatomy, such as the heart and skull, for a better understanding of abstract concepts.</li>
-                  <li>Incorporated VR technology to provide a 360-degree immersive experience, enabling detailed exploration of human organs with sound support for enhanced realism.</li>
-                  <li>Created an architecture leveraging AR cameras, trained image datasets, and 3D model databases for real-time visualization and learning.</li>
-              </ul>
-          </li>
-          <li><b>Innovations:</b>
-              <ul>
-                  <li>Interactive 3D models improved students' comprehension and interest in learning compared to traditional methods like textbooks and 2D diagrams.</li>
-                  <!-- <li>Integrated sound effects, such as heartbeats, to create a multisensory learning environment.</li> -->
-                  <li>Addressed challenges in visualizing complex concepts through innovative AR and VR solutions.</li>
-              </ul>
-          </li>
-          <li><b>Applications:</b> 
-              <ul>
-                  <li>Revolutionized education in fields like medicine, biology, and anatomy by providing hands-on virtual experiences.</li>
-                  <li>Enabled students and educators to explore intricate details of organs, enhancing both teaching and learning processes.</li>
-              </ul>
-          </li>
-          <li><b>Limitations:</b>
-              <ul>
-                  <li>AR camera requires pre-trained image datasets; untrained images cannot be scanned or processed.</li>
-                  <li>Textual information accompanying 3D models is limited, requiring supplementary resources for in-depth learning.</li>
-                  <li>High device performance requirements may limit usage on low-end devices.</li>
-              </ul>
-          </li>
-          <li><b>Conclusion:</b> While the app has certain limitations, it significantly enhances the learning experience by making education more interactive, immersive, and effective through the integration of AR and VR technologies.</li>
-      </ul>
-    </div>
-    <a class="publication-link" href="https://www.ijeat.org/wp-content/uploads/papers/v8i4/D6347048419.pdf" target="_blank">Link</a>
-       
-    </div>
-
-    <div class="publication-entry"><div class="publication-content"> 
-        <div class="publication-title">HEART BEAT MONITORING SYSTEM AND ALERTING INDICATOR FOR DRIVER’S SAFETY</div>
-        <div class="publication-details">International Journal for Science and Advance Research in Technology (IJSART), October 26, 2018</div>
-        <ul>
-          <li><b>Objective:</b> Proposed a heart rate monitoring system for drivers to predict and prevent accidents caused by heart conditions such as arrhythmia, ensuring enhanced safety during driving.</li>
-          <li><b>Key Contributions:</b>
-              <ul>
-                  <li>Designed a system utilizing an IR pulse sensor and Arduino Uno to continuously monitor the driver’s heart rate during trips.</li>
-                  <li>Integrated a buzzer and LED alert system to notify drivers when their pulse rate exceeds or falls below a predefined threshold.</li>
-                  <li>Added a GSM module to send emergency alerts to pre-registered contacts, including family members and doctors, during critical situations.</li>
-                  <li>Developed an automatic braking system to slow down or halt the vehicle in emergencies, reducing potential risks.</li>
-              </ul>
-          </li>
-          <li><b>Methodology:</b>
-              <ul>
-                  <li>Implemented Photoplethysmography (PPG) to measure heartbeats by detecting changes in blood density using an IR sensor.</li>
-                  <li>Calculated Beats Per Minute (BPM) using Arduino, displaying results on an LCD and initiating alerts when thresholds are breached.</li>
-                  <li>Configured the Arduino IDE to monitor heart rate data in real-time and display outputs through the Serial Monitor.</li>
-              </ul>
-          </li>
-          <li><b>Innovations:</b>
-              <ul>
-                  <li>Developed a compact, open-source system that can be easily installed on steering wheels or vehicle cabins for continuous driver monitoring.</li>
-                  <li>Enabled customization of heart rate thresholds, allowing personalized safety settings for different individuals.</li>
-                  <li>Integrated automatic braking systems with the heart rate monitor to ensure immediate action in case of emergencies.</li>
-              </ul>
-          </li>
-          <li><b>Applications:</b>
-              <ul>
-                  <li>Improved road safety by predicting and preventing accidents caused by medical emergencies such as heart arrhythmia.</li>
-                  <li>Enhanced vehicle intelligence by integrating driver state monitoring with automatic vehicle response systems.</li>
-                  <li>Provided real-time alerts and notifications to ensure timely medical attention for drivers during critical conditions.</li>
-              </ul>
-          </li>
-          <li><b>Results:</b>
-              <ul>
-                  <li>Demonstrated the system’s capability to differentiate normal and abnormal heart rates, triggering alerts and activating braking mechanisms effectively.</li>
-                  <li>Showcased a functional prototype with accurate BPM measurements and real-time emergency notifications.</li>
-              </ul>
-          </li>
-          <li><b>Conclusion:</b> This system provides a practical solution for enhancing driver and passenger safety by monitoring heart rate in real-time, predicting potential medical emergencies, and ensuring timely responses. It paves the way for intelligent vehicle systems with integrated health monitoring capabilities.</li>
-      </ul>
-    </div>
-    <a class="publication-link" href="https://ijsart.com/public/storage/paper/pdf/IJSARTV4I1027787.pdf" target="_blank">Link</a>
-        
-    </div>
-
-    <div class="publication-entry"><div class="publication-content"> 
-        <div class="publication-title">Route Planning for Ships During Emergency Using Genetic Algorithm</div>
-        <div class="publication-details">International Journal of Emerging Technologies in Engineering Research (IJETER), October 21, 2018</div>
-        <ul>
-          <li><b>Objective:</b> Proposed a simulation-based system using Genetic Algorithms (GA) for efficient and optimal route planning for ships during emergency situations such as low fuel or ship damage.</li>
-          <li><b>Key Contributions:</b>
-              <ul>
-                  <li>Designed a system that leverages GA to identify optimal or near-optimal routes in critical conditions, addressing technical constraints and environmental factors.</li>
-                  <li>Utilized ARPA (Automatic Radar Plotting Aids) data to plot obstacles and simulate safe navigation paths without actual ship movement.</li>
-                  <li>Modified GA’s fitness function to prioritize emergency constraints, ensuring efficient pathfinding while minimizing risks and resource wastage.</li>
-              </ul>
-          </li>
-          <li><b>Methodology:</b>
-              <ul>
-                  <li>Developed simulations in the Processing Programming Language to map obstacles and compute optimal routes using evolutionary GA methods.</li>
-                  <li>Implemented key GA operations such as population initialization, selection, crossover, and mutation to iteratively improve navigation paths.</li>
-                  <li>Integrated fitness functions to evaluate species (routes) based on their proximity to the destination, ensuring effective pathfinding during emergencies.</li>
-              </ul>
-          </li>
-          <li><b>Innovations:</b>
-              <ul>
-                  <li>Proposed a dynamic GA model adaptable to varying constraints, such as limited fuel or damaged ship conditions.</li>
-                  <li>Optimized mutation rates and lifetime parameters to balance simulation efficiency and accuracy during emergency scenarios.</li>
-                  <li>Provided a scalable framework to evaluate complex grids with numerous obstacles and potential paths.</li>
-              </ul>
-          </li>
-          <li><b>Applications:</b>
-              <ul>
-                  <li>Improved ship navigation systems by providing optimal pathfinding solutions during emergencies, reducing collision risks and resource usage.</li>
-                  <li>Enabled navigators to simulate and pre-plan routes in real-time, enhancing safety and operational efficiency.</li>
-              </ul>
-          </li>
-          <li><b>Results:</b>
-              <ul>
-                  <li>Demonstrated the effectiveness of GA-based simulations in identifying optimal routes within specified constraints.</li>
-                  <li>Highlighted the impact of mutation rates and lifetime settings on simulation performance, showcasing adaptability in emergency scenarios.</li>
-              </ul>
-          </li>
-          <li><b>Conclusion:</b> This research validates the use of Genetic Algorithms for emergency route planning in maritime navigation. By integrating ARPA data and simulation-based models, the system provides a robust and efficient framework for safe and resource-conscious ship navigation during critical situations.</li>
-      </ul>
-    </div>
-    <a class="publication-link" href="https://www.ijeter.everscience.org/Manuscripts/Volume-6/Issue-10/Vol-6-issue-10-M-10.pdf" target="_blank">Link</a>
-        
-    </div>
-
-    <section id="certifications-licenses">
-      <h1>Certifications & Licenses</h1>
-
-
-      <div class="certification-entry">
-          <div class="certification-title">Tableau Desktop Certified Professional Certification</div>
-          <div class="issuer">Tableau</div>
-          <div class="date">Issued Apr 2022 &middot; Expires Apr 2025</div>
-          <div>Credential ID: TAB1056IND</div>  </div>
-
-      <div class="certification-entry">
-          <div class="certification-title">Programming in Python</div>
-          <div class="issuer">Meta</div>
-          <div class="date">Issued Aug 2022</div> </div>
-
-
-<!-- 
-      <h2>Licenses (Optional - Add if you have any)</h2>  <div class="license-entry">
-          <div class="license-title">Example License Title</div>
-          <div class="license-issuer">Issuing Authority</div>
-          <div class="license-date">Issue/Expiry Date</div>
-          <div> <a class="credential-link" href="#" target="_blank">License Link (Optional)</a> </div>
-      </div> -->
-      <section id="volunteering">
-        <h1>Volunteering</h1>
-
-        <div class="volunteering-entry">
-            <div class="role">Core Team</div>
-            <div class="organization">TEXUS</div>
-            <div class="dates">Jan 2020 - Mar 2020</div>
-            <!-- <p>A National Level Techfest which included 50+ Technical & Non-Technical Events, Hackathon, and more.  Engaged 7000+ students from 10+ national-level colleges/universities across Tamil Nadu. Organized Vh1 Supersonic Musical Night.</p> -->
-            <p><b>Website:</b> <a href="https://texus.io" target="_blank">https://texus.io</a></p>
-            <ul>
-              <li>Organized and managed a national-level tech fest with <b>50+ technical and non-technical events</b>, engaging <b>7,000+ participants</b> from <b>10+ colleges/universities</b> across Tamil Nadu.</li>
-              <li>Led a team to design and implement a <b>creative theme</b> for the event, ensuring consistent branding and visual appeal.</li>
-              <li>Collaborated with the core team to plan, execute, and resolve event-related challenges, including the successful organization of the <b>Vh1 Supersonic Musical Night</b>.</li>
-          </ul>
         </div>
 
-        <div class="volunteering-entry">
-            <div class="role">Event Coordinator</div>
-            <div class="organization">TEXUS</div>
-            <div class="dates">Mar 2018</div>
-            <p><b>Website:</b> <a href="https://texus.io" target="_blank">https://texus.io</a></p>
+        <div class="exp-item reveal">
+          <div class="exp-date">Jun — Sep 2025</div>
+          <div class="exp-content">
+            <h3>Machine Learning Engineer</h3>
+            <p class="exp-company"><strong>ScriptChain Health</strong> &middot; Washington, DC</p>
             <ul>
-                <li>Organized an event titled <b>"Running Machine"</b>, which encouraged students to develop Remote Controlled (RC) vehicles and showcase their engineering skills.</li>
-                <li>Collaborated with the <b>Cyborg Club</b> at SRMIST to design RC cars and develop a custom track for the competition.</li>
-                <li>Contributed to a tech fest that featured <b>50+ events</b>, a hackathon, and engaged <b>7,000+ participants</b> from <b>10+ esteemed colleges/universities</b> across Tamil Nadu.</li>
+              <li><span class="m">78% ROC-AUC</span> on 30-day hospital readmission prediction using Graph Attention Network + time-aware LLM</li>
+              <li>Reduced preprocessing <span class="m">99%</span> on 500M+ records; cut GPU costs 50%, saving ~$6K/year</li>
+              <li>Architected agentic health platform with LangGraph + NVIDIA NeMo Guardrails for personalized nutrition therapy</li>
             </ul>
+          </div>
         </div>
 
-        <div class="volunteering-entry">
-            <div class="role">CYBORG - Organizing Lead</div>
-            <div class="organization">SRM University</div>
-            <div class="dates">Mar 2018</div>
+        <div class="exp-item reveal">
+          <div class="exp-date">Aug 2024 — May 2025</div>
+          <div class="exp-content">
+            <h3>Data Consultant</h3>
+            <p class="exp-company"><strong>The George Washington University</strong> &middot; Washington, DC</p>
             <ul>
-              <li>Organized a robotics workshop conducted by the <b>Cyborg Club</b> of the CSE Department at SRMIST.</li>
-              <li>Hosted a session led by <b>Mr. Tony Maciejewski</b>, Professor and Head of the ECE Department at Colorado State University.</li>
-              <li>The workshop inspired students across various departments to explore multi-disciplinary approaches and expand their understanding of robotics and its future potential.</li>
-          </ul>
+              <li>Statistical consulting (R, Python, SPSS, STATA) across public health, economics, and engineering</li>
+              <li>Led <span class="m">5+</span> ML workshops training <span class="m">100+</span> participants in model development</li>
+            </ul>
+          </div>
+        </div>
 
-            </div>
-    </section>
+        <div class="exp-item reveal">
+          <div class="exp-date">Apr 2021 — Aug 2023</div>
+          <div class="exp-content">
+            <h3>Digital Transformation Developer</h3>
+            <p class="exp-company"><strong>Tata Consultancy Services</strong> &middot; Chennai, India</p>
+            <ul>
+              <li>Deployed RPA across <span class="m">14+</span> client teams — reduced infrastructure costs <span class="m">40%</span>, improved turnaround <span class="m">30%</span></li>
+              <li>Built <span class="m">12+</span> automation bots integrated with CRM, billing, and network management systems</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-date">May — Jun 2018</div>
+          <div class="exp-content">
+            <h3>Developer Intern</h3>
+            <p class="exp-company"><strong>TCS iON</strong> &middot; Chennai, India</p>
+            <ul>
+              <li>Built student analytics platform (Python, Tableau, SQL) — <span class="m">30%</span> improvement in engagement tracking</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <a href="./Venkatesh_Shanmugam_Resume.pdf" target="_blank" class="resume-link reveal">
+        See full resume
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
   </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <p class="section-label reveal">Expertise</p>
+      <h2 class="section-title reveal">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3>ML / AI</h3>
+          <div class="tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Keras</span>
+            <span class="tag">PEFT/LoRA</span>
+            <span class="tag">Hugging Face</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">DeepSpeed</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">LangGraph</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Languages</h3>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">SQL</span>
+            <span class="tag">C++</span>
+            <span class="tag">Java</span>
+            <span class="tag">R</span>
+            <span class="tag">Bash</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Cloud & MLOps</h3>
+          <div class="tags">
+            <span class="tag">AWS</span>
+            <span class="tag">SageMaker</span>
+            <span class="tag">GCP</span>
+            <span class="tag">Vertex AI</span>
+            <span class="tag">Databricks</span>
+            <span class="tag">Delta Lake</span>
+            <span class="tag">MLflow</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Data & Infrastructure</h3>
+          <div class="tags">
+            <span class="tag">Apache Spark</span>
+            <span class="tag">Kafka</span>
+            <span class="tag">Airflow</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">Elasticsearch</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">FHIR APIs</span>
+            <span class="tag">ETL Pipelines</span>
+            <span class="tag">A/B Testing</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Specializations</h3>
+          <div class="tags">
+            <span class="tag">Agentic AI</span>
+            <span class="tag">Knowledge Graphs</span>
+            <span class="tag">GraphRAG</span>
+            <span class="tag">RAG</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Federated Learning</span>
+            <span class="tag">Distributed Training</span>
+            <span class="tag">NeMo Guardrails</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h3>AWS Services</h3>
+          <div class="tags">
+            <span class="tag">S3</span>
+            <span class="tag">Glue</span>
+            <span class="tag">Athena</span>
+            <span class="tag">EC2</span>
+            <span class="tag">Bedrock</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- ── PROJECTS ── -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <p class="section-label reveal">Projects</p>
+      <h2 class="section-title reveal">Selected Work</h2>
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <h3>Agentic Graph-RAG for Building Codes</h3>
+          <p>Production-scale multi-agent system with <span class="m">5</span> specialized LangGraph agents. <span class="m">90%</span> query accuracy improvement, <span class="m">40%</span> cost reduction, LangSmith observability, <span class="m">99.9%</span> uptime.</p>
+          <div class="project-footer">
+            <span class="tech-list">LangGraph · Pinecone · GPT-4o · Streamlit</span>
+            <a href="https://github.com/Venkat-Git98/Agentic_RAG" target="_blank" class="gh-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <h3>AI-Text Discriminator</h3>
+          <p>LoRA fine-tuned transformer on <span class="m">1.2M+</span> text samples. <span class="m">97%</span> accuracy, <span class="m">3x</span> faster training, <span class="m">50%</span> reduced memory via parameter-efficient tuning (90% parameter reduction).</p>
+          <div class="project-footer">
+            <span class="tech-list">LoRA · Transformers · PyTorch · NLP</span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer class="footer">
-<p>&copy; Venkatesh S, 2025</p> </footer>
-    <!-- Import JS: Particles Theme -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!-- Import JS: Sweet Scroll -->
-    <script src="./assets/js/sweet-scroll.min.js"></script>
-    <!-- Import JS: Main Script -->
-    <script src="./assets/js/main.js"></script>  </body>
-</html>
+  <!-- ── PUBLICATIONS ── -->
+  <section class="publications" id="publications">
+    <div class="container">
+      <p class="section-label reveal">Research</p>
+      <h2 class="section-title reveal">Publications</h2>
+      <div class="pub-list">
+        <div class="pub-item reveal">
+          <div class="pub-info">
+            <h3>An End-to-End Unified Framework for Assessing Turning Movements Based on DNNs</h3>
+            <p class="pub-journal">International Journal of Advanced Science and Technology &middot; March 2020</p>
+          </div>
+          <a href="http://sersc.org/journals/index.php/IJAST/article/view/9778" target="_blank" class="pub-link">
+            Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="pub-item reveal">
+          <div class="pub-info">
+            <h3>Enhanced Learning with Augmented Reality and Virtual Reality</h3>
+            <p class="pub-journal">IJEAT &middot; April 2019</p>
+          </div>
+          <a href="https://www.ijeat.org/wp-content/uploads/papers/v8i4/D6347048419.pdf" target="_blank" class="pub-link">
+            Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="pub-item reveal">
+          <div class="pub-info">
+            <h3>Heart Beat Monitoring System and Alerting Indicator for Driver's Safety</h3>
+            <p class="pub-journal">IJSART &middot; October 2018</p>
+          </div>
+          <a href="https://ijsart.com/public/storage/paper/pdf/IJSARTV4I1027787.pdf" target="_blank" class="pub-link">
+            Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="pub-item reveal">
+          <div class="pub-info">
+            <h3>Route Planning for Ships During Emergency Using Genetic Algorithm</h3>
+            <p class="pub-journal">IJETER &middot; October 2018</p>
+          </div>
+          <a href="https://www.ijeter.everscience.org/Manuscripts/Volume-6/Issue-10/Vol-6-issue-10-M-10.pdf" target="_blank" class="pub-link">
+            Read <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ── EDUCATION ── -->
+  <section class="education" id="education">
+    <div class="container">
+      <p class="section-label reveal">Education</p>
+      <h2 class="section-title reveal">Background</h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <p class="edu-year">2023 — 2025</p>
+          <h3>M.S. Computer Science</h3>
+          <p class="edu-school">The George Washington University</p>
+          <p class="edu-detail">GPA: 3.88 / 4.0</p>
+        </div>
+        <div class="edu-card reveal">
+          <p class="edu-year">2020 — 2022</p>
+          <h3>Executive Diploma in AI</h3>
+          <p class="edu-school">Loyola Institute of Business Administration</p>
+          <p class="edu-detail">AI, ML, Deep Learning</p>
+        </div>
+        <div class="edu-card reveal">
+          <p class="edu-year">2016 — 2020</p>
+          <h3>B.Tech Computer Science</h3>
+          <p class="edu-school">SRM University</p>
+          <p class="edu-detail">GPA: 3.5 / 4.0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <section class="certifications" id="certifications">
+    <div class="container">
+      <p class="section-label reveal">Credentials</p>
+      <h2 class="section-title reveal">Certifications</h2>
+      <div class="cert-row">
+        <div class="cert-card reveal">
+          <h3>Tableau Desktop Certified Professional</h3>
+          <p class="cert-issuer">Tableau</p>
+          <p class="cert-meta">Apr 2022 &middot; ID: TAB1056IND</p>
+        </div>
+        <div class="cert-card reveal">
+          <h3>Programming in Python</h3>
+          <p class="cert-issuer">Meta</p>
+          <p class="cert-meta">Aug 2022</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VOLUNTEERING ── -->
+  <section class="volunteering" id="volunteering">
+    <div class="container">
+      <p class="section-label reveal">Community</p>
+      <h2 class="section-title reveal">Volunteering</h2>
+      <div class="vol-list">
+        <div class="vol-item reveal">
+          <div class="vol-date">Jan — Mar 2020</div>
+          <div>
+            <h3>Core Team</h3>
+            <p class="vol-org">TEXUS &middot; <a href="https://texus.io" target="_blank" style="color:var(--accent)">texus.io</a></p>
+            <p>Organized national tech fest with 50+ events, 7,000+ participants from 10+ universities. Led creative theme design and Vh1 Supersonic Musical Night.</p>
+          </div>
+        </div>
+        <div class="vol-item reveal">
+          <div class="vol-date">Mar 2018</div>
+          <div>
+            <h3>Event Coordinator</h3>
+            <p class="vol-org">TEXUS</p>
+            <p>Organized "Running Machine" RC vehicle competition. Collaborated with Cyborg Club at SRMIST.</p>
+          </div>
+        </div>
+        <div class="vol-item reveal">
+          <div class="vol-date">Mar 2018</div>
+          <div>
+            <h3>CYBORG — Organizing Lead</h3>
+            <p class="vol-org">SRM University</p>
+            <p>Organized robotics workshop with session by Prof. Tony Maciejewski (Colorado State University ECE).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label reveal">Contact</p>
+      <h2 class="section-title reveal">Let's Connect</h2>
+      <p class="contact-sub reveal">Open to opportunities, collaborations, and interesting ML problems.</p>
+      <a href="mailto:svenkatesh.js@gmail.com" class="contact-email reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        svenkatesh.js@gmail.com
+      </a>
+      <div class="socials reveal">
+        <a href="https://www.linkedin.com/in/svenkatesh-js/" target="_blank" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/Venkat-Git98" target="_blank" class="social-btn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="mailto:svenkatesh.js@gmail.com" class="social-btn" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Venkatesh Shanmugam</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>
