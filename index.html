@@ -133,6 +133,9 @@
             <li>
               Built LLM platform infrastructure with routing, caching, tracing, governance, and cost attribution
             </li>
+            <li>
+              Side project: <a href="#between-visit" class="m">Between-Visit</a>, six agents on a 10-guideline clinical knowledge graph (<a href="https://between-visit-agent.netlify.app/start" target="_blank" rel="noopener" class="m">live demo</a>)
+            </li>
           </ul>
         </div>
 
@@ -365,6 +368,101 @@
     <div class="container">
       <p class="section-label reveal">Projects</p>
       <h2 class="section-title reveal">Selected Work</h2>
+
+      <article class="featured-project card reveal" id="between-visit">
+        <div class="fp-head">
+          <div>
+            <span class="impact-kicker">Featured · live demo · multi-agent healthcare AI</span>
+            <h3>Between-Visit: agents that run a patient's first month after hospital discharge</h3>
+            <p class="fp-lede">Six agents share one ledger and a knowledge graph built from <span class="m">10</span> official US clinical guidelines. They read the discharge note, reconcile three medicine lists, propose a going-home plan with a citation on every line, and keep watch over texts, labs and pharmacy fills for 30 days. A nurse care manager approves anything that matters; code decides what a model is allowed to do.</p>
+          </div>
+          <div class="fp-ctas">
+            <a href="https://between-visit-agent.netlify.app/start" target="_blank" rel="noopener" class="btn btn-primary">Guided demo · 3 min</a>
+            <a href="https://between-visit-agent.netlify.app/explore" target="_blank" rel="noopener" class="btn btn-ghost">Explore the graph</a>
+          </div>
+        </div>
+
+        <div class="fp-stats">
+          <div><span class="fp-num">413</span><span class="fp-lbl">guideline recommendations</span></div>
+          <div><span class="fp-num">1,296</span><span class="fp-lbl">cited studies linked</span></div>
+          <div><span class="fp-num">281</span><span class="fp-lbl">FDA label cautions</span></div>
+          <div><span class="fp-num">232 / 239</span><span class="fp-lbl">care events caught (one model alone: 165)</span></div>
+          <div><span class="fp-num">0 / 177</span><span class="fp-lbl">unsafe actions taken</span></div>
+        </div>
+
+        <div class="fp-gallery">
+          <figure class="fp-shot fp-shot-main">
+            <a href="./assets/img/between-visit/graph-studio.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/between-visit/graph-studio.webp" width="1600" height="1319" loading="lazy" alt="Guideline graph explorer: ten guidelines as colored clusters of recommendations, with filters for conditions, codes, link kinds and recommendation strength" />
+            </a>
+            <figcaption>The guideline graph: every recommendation from 10 guidelines with its conditions, medicines, tests, studies and FDA label cautions. You can slice it, follow one patient through it, or compare two guidelines.</figcaption>
+          </figure>
+          <figure class="fp-shot">
+            <a href="./assets/img/between-visit/clinician-and-phone.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/between-visit/clinician-and-phone.webp" width="1600" height="669" loading="lazy" alt="Clinician view beside the patient's phone: a text asking about Advil, a drafted reply for approval, and a note on the NSAID risk" />
+            </a>
+            <figcaption>A patient texts "Can I take Advil?" The agents draft a reply from the record and the guideline rows, code confirms it changes no medicine, and the nurse sends it.</figcaption>
+          </figure>
+          <figure class="fp-shot">
+            <a href="./assets/img/between-visit/patient-graph-walk.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/between-visit/patient-graph-walk.webp" width="1600" height="530" loading="lazy" alt="Patient graph: a creatinine result walking the graph to kidney, diabetes and osteoarthritis recommendations and label cautions" />
+            </a>
+            <figcaption>Every event walks the graph again. Here a creatinine of 1.58 reaches the rows and label cautions it touches across six guidelines.</figcaption>
+          </figure>
+          <figure class="fp-shot">
+            <a href="./assets/img/between-visit/patients-today.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/between-visit/patients-today.webp" width="1600" height="1132" loading="lazy" alt="Care manager's morning list: patients going home today with plans to approve, and patients at home sorted by urgency" />
+            </a>
+            <figcaption>The care manager's morning: plans to approve for patients going home today, and patients already home, most urgent first.</figcaption>
+          </figure>
+        </div>
+
+        <div class="fp-agents" aria-label="The six agents">
+          <span class="pattern-node"><strong>Reader</strong> discharge note → facts, plan, medicines</span>
+          <span class="pattern-node"><strong>Medicines</strong> hospital vs home vs pharmacy lists</span>
+          <span class="pattern-node"><strong>Planner</strong> going-home plan from the graph, cited</span>
+          <span class="pattern-node"><strong>Watcher</strong> due dates, labs, results</span>
+          <span class="pattern-node"><strong>Sentinel</strong> warning signs → safety reply in the same minute</span>
+          <span class="pattern-node"><strong>Companion</strong> check-ins, answers, drafted replies</span>
+        </div>
+
+        <div class="fp-caps">
+          <div>
+            <h4>Guideline knowledge graph</h4>
+            <p>Ten VA/DoD and AHA/ACC guidelines read into one graph, coded in SNOMED CT, ICD-10-CM, RxNorm and LOINC, with where guidelines agree or conflict. Every build stage was scored against an answer key written before its code.</p>
+          </div>
+          <div>
+            <h4>Medicine reconciliation</h4>
+            <p>Compares the hospital, home and pharmacy lists. It catches a held drug still on refill, a fill at the wrong dose, a new drug never picked up, and two drugs of the same kind.</p>
+          </div>
+          <div>
+            <h4>Plans a clinician approves</h4>
+            <p>The plan comes from a walk of the graph, and every line cites a guideline row. The nurse can keep, change or drop each line. Plans are versioned, and a declined change is remembered.</p>
+          </div>
+          <div>
+            <h4>Live text triage</h4>
+            <p>Warning signs get a fixed safety reply in the same minute. Medicine questions get a draft the nurse approves, and code blocks any text that would change a medicine.</p>
+          </div>
+          <div>
+            <h4>Code decides, models read</h4>
+            <p>Models read where code falls short, and code checks what they return. A model cannot write a safety text, clear a warning sign, send anything before approval, or cite a row that isn't stored.</p>
+          </div>
+          <div>
+            <h4>Evaluated, not demoed</h4>
+            <p>TransitionBench: 30 simulated months, each with an answer key written by a separate agent. It includes ablations per tool, a test of which steps need a model at all, and 600+ automated tests.</p>
+          </div>
+        </div>
+
+        <div class="project-footer">
+          <span class="tech-list">Python · FastAPI · Next.js · Claude + OpenAI · Knowledge graph · SNOMED / RxNorm / LOINC · Railway · Netlify</span>
+          <a href="https://between-visit-agent.netlify.app/" target="_blank" rel="noopener" class="gh-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live app
+          </a>
+        </div>
+        <p class="fp-next"><strong>Next:</strong> more guidelines to complete the picture, recommendation flowcharts, and a graph that learns from clinician feedback. Synthetic patients only; not for clinical use.</p>
+      </article>
+
       <div class="project-grid">
         <div class="project-card reveal">
           <h3>Agentic Graph-RAG for Building Codes</h3>
