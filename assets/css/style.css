@@ -1372,3 +1372,6 @@ section {
 
   html { scroll-behavior: auto; }
 }
+
+.fp-links { display: inline-flex; gap: 14px; flex-shrink: 0; }
+.project-grid > :only-child { grid-column: 1 / -1; }
