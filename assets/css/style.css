@@ -763,6 +763,197 @@ section {
 .project-card .gh-link:hover { color: var(--accent); }
 .project-card .gh-link svg { width: 16px; height: 16px; }
 
+/* Featured project */
+.featured-project {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.fp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.fp-head h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 12px 0 10px;
+  line-height: 1.35;
+}
+
+.fp-lede {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 720px;
+}
+
+.fp-lede .m,
+.fp-caps .m { color: var(--accent); font-weight: 600; }
+
+.fp-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-top: 28px;
+}
+
+.fp-ctas .btn { justify-content: center; white-space: nowrap; }
+
+.fp-stats {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.fp-stats > div {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid var(--border);
+}
+
+.fp-stats > div:last-child { border-right: 0; }
+
+.fp-num {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.fp-lbl {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.fp-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+.fp-shot { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.fp-shot-main { grid-column: 1 / -1; }
+
+.fp-shot a {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #0b0d10;
+  transition: border-color 0.2s;
+}
+
+.fp-shot a:hover { border-color: var(--border-hover); }
+
+.fp-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fp-shot:not(.fp-shot-main) img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.fp-shot figcaption {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.fp-agents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fp-agents .pattern-node strong { color: var(--text); font-weight: 600; margin-right: 4px; }
+
+.fp-caps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.fp-caps > div {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.fp-caps h4 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.fp-caps p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.featured-project .project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.featured-project .tech-list {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.featured-project .gh-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.featured-project .gh-link:hover { color: var(--accent); }
+.featured-project .gh-link svg { width: 16px; height: 16px; }
+
+.fp-next {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: -8px;
+}
+
+.fp-next strong { color: var(--text-secondary); }
+
+@media (max-width: 900px) {
+  .fp-head { flex-direction: column; }
+  .fp-ctas { flex-direction: row; flex-wrap: wrap; margin-top: 0; }
+  .fp-stats { grid-template-columns: repeat(2, 1fr); }
+  .fp-stats > div { border-bottom: 1px solid var(--border); }
+  .fp-stats > div:nth-child(2n) { border-right: 0; }
+  .fp-gallery { grid-template-columns: 1fr; }
+  .fp-caps { grid-template-columns: 1fr; }
+  .featured-project .project-footer { flex-direction: column; align-items: flex-start; }
+}
+
 /* ============================================
    PUBLICATIONS
    ============================================ */
