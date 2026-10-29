@@ -463,18 +463,101 @@
         <p class="fp-next"><strong>Next:</strong> more guidelines to complete the picture, recommendation flowcharts, and a graph that learns from clinician feedback. Synthetic patients only; not for clinical use.</p>
       </article>
 
-      <div class="project-grid">
-        <div class="project-card reveal">
-          <h3>Agentic Graph-RAG for Building Codes</h3>
-          <p>Production-style multi-agent RAG system over Virginia building codes with <span class="m">5</span> specialized LangGraph agents, graph-backed retrieval, memory, streaming responses, and evaluation logs. Improved query accuracy by <span class="m">90%</span> while reducing cost by <span class="m">40%</span>.</p>
-          <div class="project-footer">
-            <span class="tech-list">LangGraph · Neo4j · Redis · FastAPI</span>
-            <a href="https://github.com/Venkat-Git98/Agentic_RAG" target="_blank" class="gh-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub
-            </a>
+      <article class="featured-project card reveal" id="building-code">
+        <div class="fp-head">
+          <div>
+            <span class="impact-kicker">Live demo · agentic Graph-RAG · evaluated retrieval</span>
+            <h3>VA Building Code Chat: agents that answer from a knowledge graph of the building code, with every citation checked</h3>
+            <p class="fp-lede">Ask a question about the 2021 Virginia Construction Code. A team of LangGraph agents triages the question, plans the research, searches a Neo4j graph of the code in parallel, and writes the answer, working the numbers when the question needs a calculation. Every section and table the answer names is looked up in the graph and linked to its real text. Section numbers the graph doesn't contain stay plain text instead of becoming links.</p>
+          </div>
+          <div class="fp-ctas">
+            <a href="https://vabuildingcode.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary">Ask the code</a>
+            <a href="https://github.com/Venkat-Git98/Agentic_RAG" target="_blank" rel="noopener" class="btn btn-ghost">Source on GitHub</a>
           </div>
         </div>
+
+        <div class="fp-stats">
+          <div><span class="fp-num">5,961</span><span class="fp-lbl">graph nodes across 33 chapters</span></div>
+          <div><span class="fp-num">8,421</span><span class="fp-lbl">relationships (cites, contains, tables, equations)</span></div>
+          <div><span class="fp-num">98%</span><span class="fp-lbl">right section ranked first (was 57%)</span></div>
+          <div><span class="fp-num">0.99</span><span class="fp-lbl">retrieval MRR on the golden set</span></div>
+          <div><span class="fp-num">67% → 100%</span><span class="fp-lbl">answers citing the right section</span></div>
+        </div>
+
+        <div class="fp-gallery">
+          <figure class="fp-shot fp-shot-main">
+            <a href="./assets/img/building-code/answer-with-source.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/building-code/answer-with-source.webp" width="1600" height="964" loading="lazy" alt="An answer about minimum live loads with inline citations to Table 1607.1, and the cited table's real text open beside it" />
+            </a>
+            <figcaption>An answer with its sources. Each cited section or table opens its real text from the graph, here Table 1607.1 on live loads.</figcaption>
+          </figure>
+          <figure class="fp-shot">
+            <a href="./assets/img/building-code/run-trace.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/building-code/run-trace.webp" width="1600" height="904" loading="lazy" alt="Run trace: triage, planner, drafts, parallel research and writer steps with timings" />
+            </a>
+            <figcaption>The run trace: triage, plan, draft passages, parallel research, and the writer, each with its timing.</figcaption>
+          </figure>
+          <figure class="fp-shot">
+            <a href="./assets/img/building-code/code-graph.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/building-code/code-graph.webp" width="1600" height="950" loading="lazy" alt="Code browser showing the graph under Section 1607: sections, text passages and equations" />
+            </a>
+            <figcaption>The code browser: everything under §1607 as a graph, and what each section cites and is cited by.</figcaption>
+          </figure>
+          <figure class="fp-shot">
+            <a href="./assets/img/building-code/home.webp" target="_blank" rel="noopener">
+              <img src="./assets/img/building-code/home.webp" width="1600" height="897" loading="lazy" alt="Home screen: ask the building code a question, with graph size and example questions" />
+            </a>
+            <figcaption>Start from an example or ask your own question about loads, egress, fire ratings or a section number.</figcaption>
+          </figure>
+        </div>
+
+        <div class="fp-agents" aria-label="The workflow">
+          <span class="pattern-node"><strong>Triage</strong> one of four routes: greeting, follow-up, direct lookup, complex</span>
+          <span class="pattern-node"><strong>Planner</strong> 2–4 research steps, flags calculations</span>
+          <span class="pattern-node"><strong>Drafts</strong> a hypothetical passage per step to steer search (HyDE)</span>
+          <span class="pattern-node"><strong>Research</strong> parallel: section lookup → vector → keyword → web</span>
+          <span class="pattern-node"><strong>Writer</strong> the answer, with worked calculations</span>
+          <span class="pattern-node"><strong>Citation check</strong> every number looked up in the graph, no model</span>
+        </div>
+
+        <div class="fp-caps">
+          <div>
+            <h4>The code as a graph</h4>
+            <p>317 sections, 1,953 subsections, 3,405 passages, 118 tables, 69 equations and 49 diagrams in Neo4j, linked by what contains and cites what. 3,572 of them are embedded for semantic search.</p>
+          </div>
+          <div>
+            <h4>Retrieval that falls back</h4>
+            <p>Each research step tries a direct section lookup, then vector search, then keyword search, then the web, and stops at the first result that passes a relevance check. Web answers are labelled as such.</p>
+          </div>
+          <div>
+            <h4>Calculations from the code</h4>
+            <p>When the planner flags math, the writer takes formulas and factors from the code's own equations and tables and shows each step, for questions like snow loads and live-load reduction.</p>
+          </div>
+          <div>
+            <h4>Citations you can open</h4>
+            <p>Section and table numbers in an answer are checked against the graph without a model. The ones that exist become links to their text, so a made-up citation can't pass as real.</p>
+          </div>
+          <div>
+            <h4>Evaluated against a golden set</h4>
+            <p>49 questions with answers taken from the code text. An ablation of seven retriever variants showed that one embedding parameter cost 31 points of hit@1, and that fusing in keyword search made ranking worse.</p>
+          </div>
+          <div>
+            <h4>Monitored in CI and in production</h4>
+            <p>Every backend push runs the retrieval eval and fails below hit@3 0.95 or MRR 0.90. A nightly job runs an end-to-end eval against the deployed app, and a live metrics endpoint tracks latency, web-fallback rate and answers with no citation.</p>
+          </div>
+        </div>
+
+        <div class="project-footer">
+          <span class="tech-list">LangGraph · Gemini · Neo4j Aura · Redis · FastAPI · React 19 · Railway · Netlify</span>
+          <span class="fp-links">
+            <a href="https://github.com/Venkat-Git98/Agentic_RAG" target="_blank" rel="noopener" class="gh-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub</a>
+            <a href="https://vabuildingcode.netlify.app/" target="_blank" rel="noopener" class="gh-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live app</a>
+          </span>
+        </div>
+        <p class="fp-next">Guidance only: answers point to the code text, and a licensed professional confirms them.</p>
+      </article>
+
+      <div class="project-grid">
         <div class="project-card reveal">
           <h3>AI-Text Discriminator</h3>
           <p>LoRA fine-tuned transformer on <span class="m">1.2M+</span> text samples. <span class="m">97%</span> accuracy, <span class="m">3x</span> faster training, <span class="m">50%</span> reduced memory via parameter-efficient tuning (90% parameter reduction).</p>
